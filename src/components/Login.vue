@@ -30,13 +30,15 @@
         <img :src="isChange? showPd:hiddenPd" alt ref="imgRef" />
       </div>
       <div class="search-pd">忘记密码</div>
-      <button
-        type="submit"
-        ref="btnRef"
-        :class="btnChange?'btn':'btn btn-active'"
-        @click.prevent="handForm"
-        :disabled="isBan"
-      >登录</button>
+      <div>
+        <button
+          type="submit"
+          ref="btnRef"
+          :class="btnChange?'btn':'btn btn-active'"
+          @click.prevent="handForm"
+          :disabled="isBan"
+        >登录</button>
+      </div>
     </form>
   </div>
 </template>
@@ -152,6 +154,7 @@ export default {
 .info {
   position: relative;
   padding: 0 0 0 30px;
+  text-align: center;
   input {
     display: block;
     margin-bottom: 40px;
@@ -165,21 +168,23 @@ export default {
     font-size: 15px;
     color: #191a1b;
   }
-
-  .btn {
-    opacity: 0.7;
-    width: 314px;
-    height: 60px;
-    border: 0;
-    outline: 0;
-    border-radius: 10px;
-    // color: #e5e5e5;
-    color: #fff;
-    background-color: #ed1c23;
-    font-size: 16px;
-  }
-  .btn-active {
-    opacity: 1;
+  div {
+    margin-right: 30px;
+    .btn {
+      opacity: 0.7;
+      width: 100%;
+      height: 60px;
+      border: 0;
+      outline: 0;
+      border-radius: 10px;
+      // color: #e5e5e5;
+      color: #fff;
+      background-color: #ed1c23;
+      font-size: 16px;
+    }
+    .btn-active {
+      opacity: 1;
+    }
   }
   .one {
     display: none;
