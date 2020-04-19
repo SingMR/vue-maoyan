@@ -31,14 +31,8 @@ Vue2.5 + Vuex + mint-ui + axios + Es6 + flex + less + Vue-Router + swiper + git 
 
 项目演示
 ===
-![Home](https://github.com/SingMR/vue-maoyan/blob/master/screenShots/Home.jpg)
-![Cinema](https://github.com/SingMR/vue-maoyan/blob/master/screenShots/Cinema.jpg)
-![ZiXun](https://github.com/SingMR/vue-maoyan/blob/master/screenShots/ZiXun.jpg)
-![My](https://github.com/SingMR/vue-maoyan/blob/master/screenShots/My.jpg)
-![CinemaDetail](https://github.com/SingMR/vue-maoyan/blob/master/screenShots/CinemaDetail.jpg)
-![Search](https://github.com/SingMR/vue-maoyan/blob/master/screenShots/Search.jpg)
-![Order](https://github.com/SingMR/vue-maoyan/blob/master/screenShots/Order.jpg)
-![Login](https://github.com/SingMR/vue-maoyan/blob/master/screenShots/Login.jpg)
+<img src="https://github.com/SingMR/vue-maoyan/blob/master/screenShots/Home.jpg" width="100">
+
 
 说明
 ===
