@@ -14,7 +14,7 @@
       <!-- swiper初始化过早 所以需要加key diff算法 -->
       <Swiper :key="getLunBo.length">
         <div class="swiper-slide" v-for="(item, index) in getLunBo" :key="index">
-          <img :src="item.imgUrl" alt />
+          <img v-lazy="item.imgUrl" alt />
         </div>
       </Swiper>
     </div>
@@ -72,6 +72,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
+img[lazy=loading] {
+  width: 40px;
+  height: 300px;
+  margin: auto;
+}
 .myactive {
   color: red;
   border-bottom: 2px solid #ef4238;

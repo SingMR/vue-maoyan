@@ -34,9 +34,9 @@
       <div class="add-num">
         <h4>数量</h4>
         <div class="add-sub">
-          <div class="sub" @click="sub">-</div>
+          <div class="sub" @click="sub" @mousedown="subDown" ref="subRef" @mouseup="subUp">-</div>
           <input type="text" ref="iptVal" v-model="num" @change="changeNum" />
-          <div class="add" @click="add" ref="addRef">+</div>
+          <div class="add" @click="add" ref="addRef" @mouseup="addUp" @mousedown="addDown">+</div>
         </div>
       </div>
       <div class="message">
@@ -90,6 +90,22 @@ export default {
     this.$store.commit('getCinemaTitle', true)
     this.$store.commit('changeTabbarStatus', true)
   },
+  watch: {
+    num(val, oldVal) {
+      // console.log(val);
+      
+      if(val == 1) {
+        this.$refs.subRef.style.color = '#999'
+        this.$refs.subRef.style.backgroundColor = '#dcdcdc'
+        this.$refs.subRef.style.border = '0.1rem solid #dcdcdc'      
+      }else if(val > 1) {
+        this.$refs.subRef.style.backgroundColor = '#fff'
+        this.$refs.subRef.style.border = '0.1rem solid #e54847'
+        this.$refs.subRef.style.color = '#e54847'
+      }
+      
+    }
+  },
   methods: {
     goBack() {
       this.$router.go(-1)
@@ -103,36 +119,72 @@ export default {
     sub() {
       if (this.num > 1) {
         this.num--
-        this.money = (Number(this.money) - Number(this.orderList.originPrice)).toFixed(2)
+        this.money = (
+          Number(this.money) - Number(this.orderList.originPrice)
+        ).toFixed(2)
       }
     },
     changeNum() {
-      if(this.num < 1) {
+      if (this.num < 1) {
         this.num = 1
       }
-      this.money = (Number(this.num) * Number(this.orderList.originPrice)).toFixed(2)
+      this.money = (
+        Number(this.num) * Number(this.orderList.originPrice)
+      ).toFixed(2)
     },
 
     add() {
       this.num++
-      this.money = (Number(this.money) + Number(this.orderList.originPrice)).toFixed(2)
-
+      this.money = (
+        Number(this.money) + Number(this.orderList.originPrice)
+      ).toFixed(2)
+    },
+    subDown() {
+      if (this.num > 2 ) {     
+        this.$refs.subRef.className = 'sub sub-down'
+      }
+      if(this.num <= 2 ) {
+         this.$refs.subRef.className = 'sub'
+      }
+           
+    },
+    subUp() {
+      if (this.num > 2) {     
+        setTimeout(() => {
+          this.$refs.subRef.className = 'sub sub-up'
+        }, 200)
+      }
+    },
+    addDown() {
+      this.$refs.addRef.className = 'add add-down'      
+    },
+    addUp() {
+      setTimeout(() => {
+        this.$refs.addRef.className = 'add add-up'
+      }, 200)
     }
   }
 }
 </script>
 <style lang="less" scoped>
-// .red {
-//   width: 30px;
-//   height: 28px;
-//   background-color: red;
-//   border: 0.1rem solid #dcdcdc;
-//   color: #999;
-//   font-size: 28px;
-//   text-align: center;
-//   line-height: 28px;
-//   border-radius: 3px;
-// }
+.sub-up {
+  background-color: #fff !important;
+  border: 0.1rem solid #e54847 !important;
+}
+
+.sub-down {
+  color: #fff !important;
+  background-color: #e54847 !important;
+  border: 0.1rem solid #e54847 !important;
+}
+
+.add-up {
+  background-color: #fff !important;
+}
+.add-down {
+  color: #fff !important;
+  background-color: #e54847 !important;
+}
 
 .submit-order {
   margin: -50px 0 -30px 0;
@@ -223,7 +275,7 @@ export default {
         .sub {
           width: 30px;
           height: 28px;
-          // background-color: #dcdcdc;
+          background-color: #dcdcdc;
           border: 0.1rem solid #dcdcdc;
           color: #999;
           font-size: 28px;

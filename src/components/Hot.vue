@@ -36,6 +36,8 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+
+
 .hot {
   background-color: #ffffff;
 }
