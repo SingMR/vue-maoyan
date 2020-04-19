@@ -31,15 +31,8 @@ Vue2.5 + Vuex + mint-ui + axios + Es6 + flex + less + Vue-Router + swiper + git 
 
 项目演示
 ===
-<img src="https://github.com/SingMR/vue-maoyan/blob/master/screenShots/Home.jpg" width="250">
-<img src="https://github.com/SingMR/vue-maoyan/blob/master/screenShots/Cinema.jpg" width="250">
-<img src="https://github.com/SingMR/vue-maoyan/blob/master/screenShots/ZiXun.jpg" width="250">
-<img src="https://github.com/SingMR/vue-maoyan/blob/master/screenShots/My.jpg" width="250">
-<img src="https://github.com/SingMR/vue-maoyan/blob/master/screenShots/CinemaDetail.jpg" width="250">
-<img src="https://github.com/SingMR/vue-maoyan/blob/master/screenShots/Search.jpg" width="250">
-<img src="https://github.com/SingMR/vue-maoyan/blob/master/screenShots/Order.jpg" width="250">
-<img src="https://github.com/SingMR/vue-maoyan/blob/master/screenShots/Login.jpg" width="250">
 
+<img src="https://github.com/SingMR/vue-maoyan/blob/master/screenShots/Home.jpg" width="250"> <img src="https://github.com/SingMR/vue-maoyan/blob/master/screenShots/Cinema.jpg" width="250"> <img src="https://github.com/SingMR/vue-maoyan/blob/master/screenShots/CinemaDetail.jpg" width="250"> <img src="https://github.com/SingMR/vue-maoyan/blob/master/screenShots/ZiXun.jpg" width="250"> <img src="https://github.com/SingMR/vue-maoyan/blob/master/screenShots/Search.jpg" width="250"> <img src="https://github.com/SingMR/vue-maoyan/blob/master/screenShots/Order.jpg" width="250"> <img src="https://github.com/SingMR/vue-maoyan/blob/master/screenShots/Login.png" width="250"> <img src="https://github.com/SingMR/vue-maoyan/blob/master/screenShots/My.jpg" width="250">
 
 说明
 ===
