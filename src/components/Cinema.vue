@@ -2,7 +2,7 @@
   <div class="cinema">
     <nav>
       <div class="location">
-        <span class="city-name">广州</span>
+        <span class="city-name" @click="selectCity">广州</span>
         <span class="icon"></span>
       </div>
       <div class="search" @click="searchHandle">
@@ -77,8 +77,10 @@ export default {
       this.$router.push('/yingyuan/detail/' + id)
     },
     searchHandle() {
-      this.$router.push('/search')
-      
+      this.$router.push('/search')      
+    },
+    selectCity() {
+      this.$router.push('/city')
     }
   }
 }

@@ -1,0 +1,19 @@
+{
+    "data": [
+        {
+            "cityid": 57,
+            "cityname": "武汉",
+            "selectci": true
+        },
+        {
+            "cityid": 20,
+            "cityname": "广州",
+            "selectci": true
+        },
+        {
+            "cityid": 1,
+            "cityname": "北京",
+            "selectci": true
+        }
+    ]
+}

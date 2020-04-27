@@ -92,7 +92,7 @@ export default {
   methods: {
     async getTuanList() {
       const { data: res } = await this.$http.get(
-        `/ajax/cinemaDetail?cinemaId=${this.id}&optimus_uuid=1E81DA407B2E11EAB7392D27D81CD6E34D268A8D3C6F48AE921DEBC8402D2A9D&optimus_risk_level=71&optimus_code=10`
+        `/ajax/cinemaDetail?cinemaId=${this.id}&optimus_uuid=1E81DA407B2E11EAB7392D27D81CD6E34D268A8D3C6F48AE921DEBC8402D2A9D&optimus_risk_level=71&optimus_code=10`,
       )
       // this.tuanItemList = res.dealList.dealList
       

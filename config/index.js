@@ -12,14 +12,13 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/ajax': {
-        target: 'http://m.maoyan.com',
-        changeOrigin: true
+        target: 'https://m.maoyan.com',
+        changeOrigin: true,
       },
       '/maoyansh': {
         target: 'https://show.maoyan.com/',
         changeOrigin: true
-      }
-
+      },
     },
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

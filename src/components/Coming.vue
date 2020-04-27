@@ -34,10 +34,7 @@ export default {
   },
   methods: {
     async getComingList() {
-      const { data: res } = await this.$http.get(
-        '/ajax/mostExpected?ci=20&limit=10&offset=0&token=kRA2fg8C4A2mKIf1bqkrxZpj_wEAAAAAWwoAAO7HZXmfdsPlCfS8c39Jb-kE9hzBOR0h1s12C2ewIMqKmHf7C4cqGmqW_k3ZstODLw&optimus_uuid=1E81DA407B2E11EAB7392D27D81CD6E34D268A8D3C6F48AE921DEBC8402D2A9D&optimus_risk_level=71&optimus_code=10'
-      )
-
+      const { data: res } = await this.$http.get('/coming')   
       this.getComingMovie = res.coming
     }
   },

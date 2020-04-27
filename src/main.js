@@ -12,6 +12,7 @@ import store from './store/store'
 
 Vue.config.productionTip = false
 
+axios.defaults.timeout = 5000
 Vue.prototype.$http = axios
 
 /* eslint-disable no-new */

@@ -11,6 +11,7 @@ import My from '../components/My.vue'
 import MyOrderList from '../components/MyOrderList.vue'
 import Login from '../components/Login.vue'
 import Search from '../components/Search.vue'
+import City from '../components/city/City.vue'
 
 Vue.use(Router)
 
@@ -28,7 +29,8 @@ const router = new Router({
     {path: '/my', component: My},
     {path: '/MyOrderList', component:MyOrderList},
     {path: '/login',component: Login},
-    {path: '/search', component:Search}
+    {path: '/search', component:Search},
+    {path: '/city', component: City}
 
   ],
   mode:'history'
