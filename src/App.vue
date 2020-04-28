@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header-Title v-if="cinemaTitle"></Header-Title>
-    <router-view></router-view>
+    <router-view :key="$route.fullPath"></router-view>
     <Tab-Bar v-if="isShow"></Tab-Bar>
   </div>
 </template>

@@ -3,57 +3,68 @@
         {
             "id": 1,
             "nm": "北京",
-            "py": "beijing"
+            "py": "beijing",
+            "resId": "1588074855401"
         },
         {
             "id": 10,
             "nm": "上海",
-            "py": "shanghai"
+            "py": "shanghai",
+            "resId": "1588074722330"
         },
         {
             "id": 20,
             "nm": "广州",
-            "py": "guangzhou"
+            "py": "guangzhou",
+            "resId": "1588074875593"
         },
         {
             "id": 30,
             "nm": "深圳",
-            "py": "shenzhen"
+            "py": "shenzhen",
+            "resId": "1588074829188"
         },
         {
             "id": 42,
             "nm": "西安",
-            "py": "xian"
+            "py": "xian",
+            "resId": "1588074896690"
         },
         {
             "id": 40,
             "nm": "天津",
-            "py": "tianjin"
+            "py": "tianjin",
+            "resId": "1588074985221"
         },
         {
             "id": 44,
             "nm": "福州",
-            "py": "fuzhou"
+            "py": "fuzhou",
+            "resId": "1588075088371"
         },
         {
             "id": 45,
             "nm": "重庆",
-            "py": "chongqing"
+            "py": "chongqing",
+            "resId": "1588075017279"
         },
         {
             "id": 51,
             "nm": "宁波",
-            "py": "ningbo"
+            "py": "ningbo",
+            "resId": "1588075065595"
         },
         {
             "id": 50,
             "nm": "杭州",
-            "py": "hangzhou"
+            "py": "hangzhou",
+            "resId": "1588074917933"
         },
         {
             "id": 55,
             "nm": "南京",
-            "py": "nanjing"
+            "py": "nanjing",
+            "resId": "1588075144355"
         },
         {
             "id": 52,
@@ -494,6 +505,2006 @@
             "id": 170,
             "nm": "鹤岗",
             "py": "hegang"
+        },
+        {
+            "id": 168,
+            "nm": "延边",
+            "py": "yanbian"
+        },
+        {
+            "id": 175,
+            "nm": "牡丹江",
+            "py": "mudanjiang"
+        },
+        {
+            "id": 174,
+            "nm": "七台河",
+            "py": "qitaihe"
+        },
+        {
+            "id": 173,
+            "nm": "佳木斯",
+            "py": "jiamusi"
+        },
+        {
+            "id": 172,
+            "nm": "伊春",
+            "py": "yichunyc"
+        },
+        {
+            "id": 163,
+            "nm": "辽源",
+            "py": "liaoyuan"
+        },
+        {
+            "id": 162,
+            "nm": "四平",
+            "py": "siping"
+        },
+        {
+            "id": 161,
+            "nm": "吉林",
+            "py": "jilin"
+        },
+        {
+            "id": 160,
+            "nm": "朝阳",
+            "py": "chaoyang"
+        },
+        {
+            "id": 167,
+            "nm": "白城",
+            "py": "baicheng"
+        },
+        {
+            "id": 166,
+            "nm": "松原",
+            "py": "songyuan"
+        },
+        {
+            "id": 165,
+            "nm": "白山",
+            "py": "baishan"
+        },
+        {
+            "id": 164,
+            "nm": "通化",
+            "py": "tonghua"
+        },
+        {
+            "id": 186,
+            "nm": "湖州",
+            "py": "huzhou"
+        },
+        {
+            "id": 187,
+            "nm": "绍兴",
+            "py": "shaoxing"
+        },
+        {
+            "id": 184,
+            "nm": "宿迁",
+            "py": "suqian"
+        },
+        {
+            "id": 185,
+            "nm": "嘉兴",
+            "py": "jiaxing"
+        },
+        {
+            "id": 190,
+            "nm": "舟山",
+            "py": "zhoushan"
+        },
+        {
+            "id": 191,
+            "nm": "台州",
+            "py": "taizhoutz"
+        },
+        {
+            "id": 188,
+            "nm": "金华",
+            "py": "jinhua"
+        },
+        {
+            "id": 189,
+            "nm": "衢州",
+            "py": "quzhou"
+        },
+        {
+            "id": 178,
+            "nm": "大兴安岭",
+            "py": "daxinganling"
+        },
+        {
+            "id": 179,
+            "nm": "连云港",
+            "py": "lianyungang"
+        },
+        {
+            "id": 176,
+            "nm": "黑河",
+            "py": "heihe"
+        },
+        {
+            "id": 177,
+            "nm": "绥化",
+            "py": "suihua"
+        },
+        {
+            "id": 182,
+            "nm": "镇江",
+            "py": "zhenjiang"
+        },
+        {
+            "id": 183,
+            "nm": "泰州",
+            "py": "taizhou"
+        },
+        {
+            "id": 180,
+            "nm": "淮安",
+            "py": "huaian"
+        },
+        {
+            "id": 181,
+            "nm": "盐城",
+            "py": "yancheng"
+        },
+        {
+            "id": 205,
+            "nm": "池州",
+            "py": "chizhou"
+        },
+        {
+            "id": 204,
+            "nm": "亳州",
+            "py": "bozhou"
+        },
+        {
+            "id": 207,
+            "nm": "莆田",
+            "py": "putian"
+        },
+        {
+            "id": 206,
+            "nm": "宣城",
+            "py": "xuancheng"
+        },
+        {
+            "id": 201,
+            "nm": "宿州",
+            "py": "suzhousz"
+        },
+        {
+            "id": 200,
+            "nm": "阜阳",
+            "py": "fuyang"
+        },
+        {
+            "id": 203,
+            "nm": "六安",
+            "py": "liuan"
+        },
+        {
+            "id": 202,
+            "nm": "巢湖",
+            "py": "chaohu"
+        },
+        {
+            "id": 197,
+            "nm": "安庆",
+            "py": "anqing"
+        },
+        {
+            "id": 196,
+            "nm": "铜陵",
+            "py": "tongling"
+        },
+        {
+            "id": 199,
+            "nm": "滁州",
+            "py": "chuzhou"
+        },
+        {
+            "id": 198,
+            "nm": "黄山",
+            "py": "huangshan"
+        },
+        {
+            "id": 193,
+            "nm": "淮南",
+            "py": "huainan"
+        },
+        {
+            "id": 192,
+            "nm": "丽水",
+            "py": "lishui"
+        },
+        {
+            "id": 195,
+            "nm": "淮北",
+            "py": "huaibei"
+        },
+        {
+            "id": 194,
+            "nm": "马鞍山",
+            "py": "maanshan"
+        },
+        {
+            "id": 220,
+            "nm": "抚州",
+            "py": "fuzhoufz"
+        },
+        {
+            "id": 221,
+            "nm": "上饶",
+            "py": "shangrao"
+        },
+        {
+            "id": 222,
+            "nm": "枣庄",
+            "py": "zaozhuang"
+        },
+        {
+            "id": 223,
+            "nm": "东营",
+            "py": "dongying"
+        },
+        {
+            "id": 216,
+            "nm": "鹰潭",
+            "py": "yingtan"
+        },
+        {
+            "id": 217,
+            "nm": "赣州",
+            "py": "ganzhou"
+        },
+        {
+            "id": 218,
+            "nm": "吉安",
+            "py": "jian"
+        },
+        {
+            "id": 219,
+            "nm": "宜春",
+            "py": "yichun"
+        },
+        {
+            "id": 212,
+            "nm": "宁德",
+            "py": "ningde"
+        },
+        {
+            "id": 213,
+            "nm": "景德镇",
+            "py": "jingdezhen"
+        },
+        {
+            "id": 214,
+            "nm": "萍乡",
+            "py": "pingxiang"
+        },
+        {
+            "id": 215,
+            "nm": "新余",
+            "py": "xinyu"
+        },
+        {
+            "id": 208,
+            "nm": "三明",
+            "py": "sanming"
+        },
+        {
+            "id": 209,
+            "nm": "漳州",
+            "py": "zhangzhou"
+        },
+        {
+            "id": 210,
+            "nm": "南平",
+            "py": "nanping"
+        },
+        {
+            "id": 211,
+            "nm": "龙岩",
+            "py": "longyan"
+        },
+        {
+            "id": 239,
+            "nm": "鹤壁",
+            "py": "hebi"
+        },
+        {
+            "id": 238,
+            "nm": "安阳",
+            "py": "anyang"
+        },
+        {
+            "id": 237,
+            "nm": "平顶山",
+            "py": "pingdingshan"
+        },
+        {
+            "id": 236,
+            "nm": "洛阳",
+            "py": "luoyang"
+        },
+        {
+            "id": 235,
+            "nm": "开封",
+            "py": "kaifeng"
+        },
+        {
+            "id": 234,
+            "nm": "菏泽",
+            "py": "heze"
+        },
+        {
+            "id": 233,
+            "nm": "滨州",
+            "py": "binzhou"
+        },
+        {
+            "id": 232,
+            "nm": "聊城",
+            "py": "liaocheng"
+        },
+        {
+            "id": 231,
+            "nm": "德州",
+            "py": "dezhou"
+        },
+        {
+            "id": 230,
+            "nm": "临沂",
+            "py": "linyi"
+        },
+        {
+            "id": 229,
+            "nm": "莱芜",
+            "py": "laiwu"
+        },
+        {
+            "id": 228,
+            "nm": "日照",
+            "py": "rizhao"
+        },
+        {
+            "id": 227,
+            "nm": "威海",
+            "py": "weihai"
+        },
+        {
+            "id": 226,
+            "nm": "泰安",
+            "py": "taian"
+        },
+        {
+            "id": 225,
+            "nm": "济宁",
+            "py": "jining"
+        },
+        {
+            "id": 224,
+            "nm": "潍坊",
+            "py": "weifang"
+        },
+        {
+            "id": 254,
+            "nm": "鄂州",
+            "py": "ezhou"
+        },
+        {
+            "id": 255,
+            "nm": "荆门",
+            "py": "jingmen"
+        },
+        {
+            "id": 252,
+            "nm": "宜昌",
+            "py": "yichang"
+        },
+        {
+            "id": 253,
+            "nm": "襄阳",
+            "py": "xiangyang"
+        },
+        {
+            "id": 250,
+            "nm": "黄石",
+            "py": "huangshi"
+        },
+        {
+            "id": 251,
+            "nm": "十堰",
+            "py": "shiyan"
+        },
+        {
+            "id": 248,
+            "nm": "驻马店",
+            "py": "zhumadian"
+        },
+        {
+            "id": 249,
+            "nm": "济源",
+            "py": "jiyuan"
+        },
+        {
+            "id": 246,
+            "nm": "信阳",
+            "py": "xinyang"
+        },
+        {
+            "id": 247,
+            "nm": "周口",
+            "py": "zhoukou"
+        },
+        {
+            "id": 244,
+            "nm": "南阳",
+            "py": "nanyang"
+        },
+        {
+            "id": 245,
+            "nm": "商丘",
+            "py": "shangqiu"
+        },
+        {
+            "id": 242,
+            "nm": "漯河",
+            "py": "luohe"
+        },
+        {
+            "id": 243,
+            "nm": "三门峡",
+            "py": "sanmenxia"
+        },
+        {
+            "id": 240,
+            "nm": "濮阳",
+            "py": "puyang"
+        },
+        {
+            "id": 241,
+            "nm": "许昌",
+            "py": "xuchang"
+        },
+        {
+            "id": 275,
+            "nm": "湘西",
+            "py": "xiangxi"
+        },
+        {
+            "id": 274,
+            "nm": "娄底",
+            "py": "loudi"
+        },
+        {
+            "id": 273,
+            "nm": "怀化",
+            "py": "huaihua"
+        },
+        {
+            "id": 272,
+            "nm": "永州",
+            "py": "yongzhou"
+        },
+        {
+            "id": 279,
+            "nm": "茂名",
+            "py": "maoming"
+        },
+        {
+            "id": 278,
+            "nm": "湛江",
+            "py": "zhanjiang"
+        },
+        {
+            "id": 277,
+            "nm": "江门",
+            "py": "jiangmen"
+        },
+        {
+            "id": 276,
+            "nm": "韶关",
+            "py": "shaoguan"
+        },
+        {
+            "id": 283,
+            "nm": "汕尾",
+            "py": "shanwei"
+        },
+        {
+            "id": 282,
+            "nm": "梅州",
+            "py": "meizhou"
+        },
+        {
+            "id": 281,
+            "nm": "惠州",
+            "py": "huizhou"
+        },
+        {
+            "id": 280,
+            "nm": "肇庆",
+            "py": "zhaoqing"
+        },
+        {
+            "id": 287,
+            "nm": "潮州",
+            "py": "chaozhou"
+        },
+        {
+            "id": 286,
+            "nm": "清远",
+            "py": "qingyuan"
+        },
+        {
+            "id": 285,
+            "nm": "阳江",
+            "py": "yangjiang"
+        },
+        {
+            "id": 284,
+            "nm": "河源",
+            "py": "heyuan"
+        },
+        {
+            "id": 258,
+            "nm": "黄冈",
+            "py": "huanggang"
+        },
+        {
+            "id": 259,
+            "nm": "咸宁",
+            "py": "xianning"
+        },
+        {
+            "id": 256,
+            "nm": "孝感",
+            "py": "xiaogan"
+        },
+        {
+            "id": 257,
+            "nm": "荆州",
+            "py": "jingzhou"
+        },
+        {
+            "id": 263,
+            "nm": "株洲",
+            "py": "zhuzhou"
+        },
+        {
+            "id": 260,
+            "nm": "随州",
+            "py": "suizhou"
+        },
+        {
+            "id": 261,
+            "nm": "恩施",
+            "py": "enshi"
+        },
+        {
+            "id": 266,
+            "nm": "邵阳",
+            "py": "shaoyang"
+        },
+        {
+            "id": 267,
+            "nm": "岳阳",
+            "py": "yueyang"
+        },
+        {
+            "id": 264,
+            "nm": "湘潭",
+            "py": "xiangtan"
+        },
+        {
+            "id": 265,
+            "nm": "衡阳",
+            "py": "hengyang"
+        },
+        {
+            "id": 270,
+            "nm": "益阳",
+            "py": "yiyang"
+        },
+        {
+            "id": 271,
+            "nm": "郴州",
+            "py": "chenzhou"
+        },
+        {
+            "id": 268,
+            "nm": "常德",
+            "py": "changde"
+        },
+        {
+            "id": 269,
+            "nm": "张家界",
+            "py": "zhangjiajie"
+        },
+        {
+            "id": 305,
+            "nm": "德阳",
+            "py": "deyang"
+        },
+        {
+            "id": 304,
+            "nm": "泸州",
+            "py": "luzhou"
+        },
+        {
+            "id": 307,
+            "nm": "广元",
+            "py": "guangyuan"
+        },
+        {
+            "id": 306,
+            "nm": "绵阳",
+            "py": "mianyang"
+        },
+        {
+            "id": 309,
+            "nm": "内江",
+            "py": "neijiang"
+        },
+        {
+            "id": 308,
+            "nm": "遂宁",
+            "py": "suining"
+        },
+        {
+            "id": 311,
+            "nm": "南充",
+            "py": "nanchong"
+        },
+        {
+            "id": 310,
+            "nm": "乐山",
+            "py": "leshan"
+        },
+        {
+            "id": 313,
+            "nm": "宜宾",
+            "py": "yibin"
+        },
+        {
+            "id": 312,
+            "nm": "眉山",
+            "py": "meishan"
+        },
+        {
+            "id": 315,
+            "nm": "达州",
+            "py": "dazhou"
+        },
+        {
+            "id": 314,
+            "nm": "广安",
+            "py": "guangan"
+        },
+        {
+            "id": 317,
+            "nm": "巴中",
+            "py": "bazhong"
+        },
+        {
+            "id": 316,
+            "nm": "雅安",
+            "py": "yaan"
+        },
+        {
+            "id": 319,
+            "nm": "阿坝",
+            "py": "aba"
+        },
+        {
+            "id": 318,
+            "nm": "资阳",
+            "py": "ziyang"
+        },
+        {
+            "id": 288,
+            "nm": "揭阳",
+            "py": "jieyang"
+        },
+        {
+            "id": 289,
+            "nm": "云浮",
+            "py": "yunfu"
+        },
+        {
+            "id": 290,
+            "nm": "柳州",
+            "py": "liuzhou"
+        },
+        {
+            "id": 291,
+            "nm": "梧州",
+            "py": "wuzhou"
+        },
+        {
+            "id": 292,
+            "nm": "北海",
+            "py": "beihai"
+        },
+        {
+            "id": 293,
+            "nm": "防城港",
+            "py": "fangchenggang"
+        },
+        {
+            "id": 294,
+            "nm": "钦州",
+            "py": "qinzhou"
+        },
+        {
+            "id": 295,
+            "nm": "贵港",
+            "py": "guigang"
+        },
+        {
+            "id": 296,
+            "nm": "玉林",
+            "py": "yulin"
+        },
+        {
+            "id": 297,
+            "nm": "百色",
+            "py": "baise"
+        },
+        {
+            "id": 298,
+            "nm": "贺州",
+            "py": "hezhou"
+        },
+        {
+            "id": 299,
+            "nm": "河池",
+            "py": "hechi"
+        },
+        {
+            "id": 300,
+            "nm": "来宾",
+            "py": "laibin"
+        },
+        {
+            "id": 301,
+            "nm": "崇左",
+            "py": "chongzuo"
+        },
+        {
+            "id": 302,
+            "nm": "自贡",
+            "py": "zigong"
+        },
+        {
+            "id": 303,
+            "nm": "攀枝花",
+            "py": "panzhihua"
+        },
+        {
+            "id": 343,
+            "nm": "怒江",
+            "py": "nujiang"
+        },
+        {
+            "id": 342,
+            "nm": "德宏",
+            "py": "dehong"
+        },
+        {
+            "id": 341,
+            "nm": "大理",
+            "py": "dali"
+        },
+        {
+            "id": 340,
+            "nm": "西双版纳",
+            "py": "xishuangbanna"
+        },
+        {
+            "id": 339,
+            "nm": "文山",
+            "py": "wenshan"
+        },
+        {
+            "id": 338,
+            "nm": "红河",
+            "py": "honghe"
+        },
+        {
+            "id": 337,
+            "nm": "楚雄",
+            "py": "chuxiong"
+        },
+        {
+            "id": 336,
+            "nm": "临沧",
+            "py": "lincang"
+        },
+        {
+            "id": 351,
+            "nm": "林芝",
+            "py": "linzhi"
+        },
+        {
+            "id": 350,
+            "nm": "阿里",
+            "py": "ali"
+        },
+        {
+            "id": 348,
+            "nm": "日喀则",
+            "py": "rikaze"
+        },
+        {
+            "id": 346,
+            "nm": "昌都",
+            "py": "changdu"
+        },
+        {
+            "id": 345,
+            "nm": "拉萨",
+            "py": "lasa"
+        },
+        {
+            "id": 344,
+            "nm": "迪庆",
+            "py": "diqing"
+        },
+        {
+            "id": 326,
+            "nm": "黔西南",
+            "py": "qianxinan"
+        },
+        {
+            "id": 327,
+            "nm": "毕节",
+            "py": "bijiediqu"
+        },
+        {
+            "id": 324,
+            "nm": "安顺",
+            "py": "anshun"
+        },
+        {
+            "id": 325,
+            "nm": "铜仁",
+            "py": "tongrendiqu"
+        },
+        {
+            "id": 322,
+            "nm": "六盘水",
+            "py": "liupanshui"
+        },
+        {
+            "id": 323,
+            "nm": "遵义",
+            "py": "zunyi"
+        },
+        {
+            "id": 320,
+            "nm": "甘孜",
+            "py": "ganzi"
+        },
+        {
+            "id": 321,
+            "nm": "凉山",
+            "py": "liangshan"
+        },
+        {
+            "id": 334,
+            "nm": "丽江",
+            "py": "lijiang"
+        },
+        {
+            "id": 335,
+            "nm": "普洱",
+            "py": "puer"
+        },
+        {
+            "id": 332,
+            "nm": "保山",
+            "py": "baoshan"
+        },
+        {
+            "id": 333,
+            "nm": "昭通",
+            "py": "zhaotong"
+        },
+        {
+            "id": 330,
+            "nm": "曲靖",
+            "py": "qujing"
+        },
+        {
+            "id": 331,
+            "nm": "玉溪",
+            "py": "yuxi"
+        },
+        {
+            "id": 328,
+            "nm": "黔东南",
+            "py": "qiandongnan"
+        },
+        {
+            "id": 329,
+            "nm": "黔南",
+            "py": "qiannan"
+        },
+        {
+            "id": 373,
+            "nm": "甘南",
+            "py": "gannan"
+        },
+        {
+            "id": 372,
+            "nm": "临夏",
+            "py": "linxia"
+        },
+        {
+            "id": 375,
+            "nm": "海东",
+            "py": "haidong"
+        },
+        {
+            "id": 374,
+            "nm": "西宁",
+            "py": "xining"
+        },
+        {
+            "id": 369,
+            "nm": "庆阳",
+            "py": "qingyang"
+        },
+        {
+            "id": 368,
+            "nm": "酒泉",
+            "py": "jiuquan"
+        },
+        {
+            "id": 371,
+            "nm": "陇南",
+            "py": "longnan"
+        },
+        {
+            "id": 370,
+            "nm": "定西",
+            "py": "dingxi"
+        },
+        {
+            "id": 381,
+            "nm": "海西",
+            "py": "haixi"
+        },
+        {
+            "id": 380,
+            "nm": "玉树",
+            "py": "yushu"
+        },
+        {
+            "id": 383,
+            "nm": "石嘴山",
+            "py": "shizuishan"
+        },
+        {
+            "id": 382,
+            "nm": "银川",
+            "py": "yinchuan"
+        },
+        {
+            "id": 377,
+            "nm": "黄南",
+            "py": "huangnan"
+        },
+        {
+            "id": 378,
+            "nm": "海南州",
+            "py": "hainanzhou"
+        },
+        {
+            "id": 356,
+            "nm": "延安",
+            "py": "yanan"
+        },
+        {
+            "id": 357,
+            "nm": "汉中",
+            "py": "hanzhong"
+        },
+        {
+            "id": 358,
+            "nm": "榆林",
+            "py": "yulinyl"
+        },
+        {
+            "id": 359,
+            "nm": "安康",
+            "py": "ankang"
+        },
+        {
+            "id": 352,
+            "nm": "铜川",
+            "py": "tongchuan"
+        },
+        {
+            "id": 353,
+            "nm": "宝鸡",
+            "py": "baoji"
+        },
+        {
+            "id": 354,
+            "nm": "咸阳",
+            "py": "xianyang"
+        },
+        {
+            "id": 355,
+            "nm": "渭南",
+            "py": "weinan"
+        },
+        {
+            "id": 364,
+            "nm": "天水",
+            "py": "tianshui"
+        },
+        {
+            "id": 365,
+            "nm": "武威",
+            "py": "wuwei"
+        },
+        {
+            "id": 366,
+            "nm": "张掖",
+            "py": "zhangye"
+        },
+        {
+            "id": 367,
+            "nm": "平凉",
+            "py": "pingliang"
+        },
+        {
+            "id": 360,
+            "nm": "商洛",
+            "py": "shangluo"
+        },
+        {
+            "id": 361,
+            "nm": "兰州",
+            "py": "lanzhou"
+        },
+        {
+            "id": 362,
+            "nm": "金昌",
+            "py": "jinchang"
+        },
+        {
+            "id": 363,
+            "nm": "白银",
+            "py": "baiyin"
+        },
+        {
+            "id": 408,
+            "nm": "石河子",
+            "py": "shihezi"
+        },
+        {
+            "id": 409,
+            "nm": "嘉峪关",
+            "py": "jiayuguan"
+        },
+        {
+            "id": 412,
+            "nm": "仙桃",
+            "py": "xiantao"
+        },
+        {
+            "id": 403,
+            "nm": "昆山",
+            "py": "kunshan"
+        },
+        {
+            "id": 400,
+            "nm": "阿勒泰",
+            "py": "aletai"
+        },
+        {
+            "id": 406,
+            "nm": "顺德",
+            "py": "shunde"
+        },
+        {
+            "id": 404,
+            "nm": "江阴",
+            "py": "jiangyin"
+        },
+        {
+            "id": 405,
+            "nm": "义乌",
+            "py": "yiwu"
+        },
+        {
+            "id": 394,
+            "nm": "阿克苏",
+            "py": "akesu"
+        },
+        {
+            "id": 393,
+            "nm": "巴州",
+            "py": "bazhou"
+        },
+        {
+            "id": 392,
+            "nm": "博尔塔拉",
+            "py": "boertala"
+        },
+        {
+            "id": 399,
+            "nm": "塔城",
+            "py": "tacheng"
+        },
+        {
+            "id": 398,
+            "nm": "伊犁",
+            "py": "yili"
+        },
+        {
+            "id": 397,
+            "nm": "和田",
+            "py": "hetian"
+        },
+        {
+            "id": 396,
+            "nm": "喀什地区",
+            "py": "kashi"
+        },
+        {
+            "id": 387,
+            "nm": "乌鲁木齐",
+            "py": "wulumuqi"
+        },
+        {
+            "id": 386,
+            "nm": "中卫",
+            "py": "zhongwei"
+        },
+        {
+            "id": 385,
+            "nm": "固原",
+            "py": "guyuan"
+        },
+        {
+            "id": 384,
+            "nm": "吴忠",
+            "py": "wuzhong"
+        },
+        {
+            "id": 391,
+            "nm": "昌吉",
+            "py": "changji"
+        },
+        {
+            "id": 390,
+            "nm": "哈密",
+            "py": "hami"
+        },
+        {
+            "id": 389,
+            "nm": "吐鲁番",
+            "py": "tulufan"
+        },
+        {
+            "id": 388,
+            "nm": "克拉玛依",
+            "py": "kelamayi"
+        },
+        {
+            "id": 440,
+            "nm": "石狮",
+            "py": "shishi"
+        },
+        {
+            "id": 443,
+            "nm": "武夷山",
+            "py": "wuyishan"
+        },
+        {
+            "id": 432,
+            "nm": "太仓",
+            "py": "taicang"
+        },
+        {
+            "id": 433,
+            "nm": "吴江",
+            "py": "wujiang"
+        },
+        {
+            "id": 434,
+            "nm": "敦煌",
+            "py": "dunhuang"
+        },
+        {
+            "id": 439,
+            "nm": "靖江",
+            "py": "jingjiang"
+        },
+        {
+            "id": 425,
+            "nm": "桐乡",
+            "py": "tongxiang"
+        },
+        {
+            "id": 424,
+            "nm": "海宁",
+            "py": "haining"
+        },
+        {
+            "id": 427,
+            "nm": "涪陵",
+            "py": "fuling"
+        },
+        {
+            "id": 426,
+            "nm": "涿州",
+            "py": "zhuozhou"
+        },
+        {
+            "id": 428,
+            "nm": "万州",
+            "py": "wanzhou"
+        },
+        {
+            "id": 431,
+            "nm": "丹阳",
+            "py": "danyang"
+        },
+        {
+            "id": 430,
+            "nm": "迁安",
+            "py": "qianan"
+        },
+        {
+            "id": 417,
+            "nm": "峨眉山",
+            "py": "emeishan"
+        },
+        {
+            "id": 416,
+            "nm": "富阳",
+            "py": "fuyangfy"
+        },
+        {
+            "id": 419,
+            "nm": "张家港",
+            "py": "zhangjiagang"
+        },
+        {
+            "id": 418,
+            "nm": "琼海",
+            "py": "qionghai"
+        },
+        {
+            "id": 421,
+            "nm": "从化",
+            "py": "conghua"
+        },
+        {
+            "id": 420,
+            "nm": "晋江市",
+            "py": "jinjiangshi"
+        },
+        {
+            "id": 422,
+            "nm": "常熟",
+            "py": "changshu"
+        },
+        {
+            "id": 478,
+            "nm": "东台",
+            "py": "dongtai"
+        },
+        {
+            "id": 479,
+            "nm": "婺源",
+            "py": "wuyuan"
+        },
+        {
+            "id": 476,
+            "nm": "兰溪",
+            "py": "lanxi"
+        },
+        {
+            "id": 477,
+            "nm": "大丰",
+            "py": "dafeng"
+        },
+        {
+            "id": 475,
+            "nm": "仁怀",
+            "py": "renhuai"
+        },
+        {
+            "id": 472,
+            "nm": "惠阳",
+            "py": "huiyang"
+        },
+        {
+            "id": 473,
+            "nm": "凯里",
+            "py": "kaili"
+        },
+        {
+            "id": 470,
+            "nm": "乐清",
+            "py": "yueqing"
+        },
+        {
+            "id": 471,
+            "nm": "惠东",
+            "py": "huidong"
+        },
+        {
+            "id": 468,
+            "nm": "诸暨",
+            "py": "zhuji"
+        },
+        {
+            "id": 469,
+            "nm": "瑞安",
+            "py": "ruian"
+        },
+        {
+            "id": 466,
+            "nm": "阳朔",
+            "py": "yangshuo"
+        },
+        {
+            "id": 467,
+            "nm": "德清",
+            "py": "deqing"
+        },
+        {
+            "id": 465,
+            "nm": "章丘区",
+            "py": "zhangqiuqu"
+        },
+        {
+            "id": 463,
+            "nm": "长乐",
+            "py": "changle"
+        },
+        {
+            "id": 462,
+            "nm": "福清",
+            "py": "fuqing"
+        },
+        {
+            "id": 461,
+            "nm": "临海",
+            "py": "linhai"
+        },
+        {
+            "id": 460,
+            "nm": "金坛",
+            "py": "jintan"
+        },
+        {
+            "id": 459,
+            "nm": "余姚",
+            "py": "yuyao"
+        },
+        {
+            "id": 458,
+            "nm": "永康",
+            "py": "yongkang"
+        },
+        {
+            "id": 457,
+            "nm": "温岭",
+            "py": "wenling"
+        },
+        {
+            "id": 456,
+            "nm": "上虞",
+            "py": "shangyu"
+        },
+        {
+            "id": 455,
+            "nm": "东阳",
+            "py": "dongyang"
+        },
+        {
+            "id": 454,
+            "nm": "宜兴",
+            "py": "yixing"
+        },
+        {
+            "id": 453,
+            "nm": "兖州",
+            "py": "yanzhou"
+        },
+        {
+            "id": 452,
+            "nm": "长兴",
+            "py": "changxing"
+        },
+        {
+            "id": 451,
+            "nm": "慈溪",
+            "py": "cixi"
+        },
+        {
+            "id": 450,
+            "nm": "溧阳",
+            "py": "liyang"
+        },
+        {
+            "id": 449,
+            "nm": "武安",
+            "py": "wuan"
+        },
+        {
+            "id": 508,
+            "nm": "邹平",
+            "py": "zouping"
+        },
+        {
+            "id": 509,
+            "nm": "耒阳",
+            "py": "leiyang"
+        },
+        {
+            "id": 510,
+            "nm": "江山",
+            "py": "jiangshan"
+        },
+        {
+            "id": 504,
+            "nm": "鹤山",
+            "py": "heshan"
+        },
+        {
+            "id": 505,
+            "nm": "桦甸",
+            "py": "huadian"
+        },
+        {
+            "id": 506,
+            "nm": "海城",
+            "py": "haicheng"
+        },
+        {
+            "id": 507,
+            "nm": "曲阜",
+            "py": "qufu"
+        },
+        {
+            "id": 500,
+            "nm": "启东",
+            "py": "qidong"
+        },
+        {
+            "id": 501,
+            "nm": "如皋",
+            "py": "rugao"
+        },
+        {
+            "id": 502,
+            "nm": "开平",
+            "py": "kaiping"
+        },
+        {
+            "id": 503,
+            "nm": "台山",
+            "py": "taishan"
+        },
+        {
+            "id": 496,
+            "nm": "青州",
+            "py": "qingzhou"
+        },
+        {
+            "id": 497,
+            "nm": "荣成",
+            "py": "rongcheng"
+        },
+        {
+            "id": 498,
+            "nm": "文登",
+            "py": "wendeng"
+        },
+        {
+            "id": 499,
+            "nm": "乳山",
+            "py": "rushan"
+        },
+        {
+            "id": 493,
+            "nm": "邳州",
+            "py": "pizhou"
+        },
+        {
+            "id": 492,
+            "nm": "龙口",
+            "py": "longkou"
+        },
+        {
+            "id": 495,
+            "nm": "寿光",
+            "py": "shouguang"
+        },
+        {
+            "id": 494,
+            "nm": "枣阳",
+            "py": "zaoyang"
+        },
+        {
+            "id": 489,
+            "nm": "嘉善",
+            "py": "jiashan"
+        },
+        {
+            "id": 491,
+            "nm": "当阳",
+            "py": "dangyang"
+        },
+        {
+            "id": 490,
+            "nm": "安吉",
+            "py": "anji"
+        },
+        {
+            "id": 485,
+            "nm": "井冈山",
+            "py": "jinggangshan"
+        },
+        {
+            "id": 484,
+            "nm": "香格里拉",
+            "py": "xianggelila"
+        },
+        {
+            "id": 487,
+            "nm": "神农架",
+            "py": "shennongjia"
+        },
+        {
+            "id": 486,
+            "nm": "武当山",
+            "py": "wudangshan"
+        },
+        {
+            "id": 480,
+            "nm": "凤凰",
+            "py": "fenghuang"
+        },
+        {
+            "id": 482,
+            "nm": "腾冲",
+            "py": "tengchong"
+        },
+        {
+            "id": 550,
+            "nm": "潜江",
+            "py": "qianjiang"
+        },
+        {
+            "id": 551,
+            "nm": "乌镇",
+            "py": "wuzhen"
+        },
+        {
+            "id": 548,
+            "nm": "新沂",
+            "py": "xinyi"
+        },
+        {
+            "id": 549,
+            "nm": "滕州",
+            "py": "tengzhou"
+        },
+        {
+            "id": 546,
+            "nm": "普宁",
+            "py": "puning"
+        },
+        {
+            "id": 547,
+            "nm": "南沙",
+            "py": "nansha"
+        },
+        {
+            "id": 544,
+            "nm": "晋州",
+            "py": "jinzhoushi"
+        },
+        {
+            "id": 545,
+            "nm": "肥城",
+            "py": "feicheng"
+        },
+        {
+            "id": 558,
+            "nm": "庄河",
+            "py": "zhuanghe"
+        },
+        {
+            "id": 559,
+            "nm": "扬中",
+            "py": "yangzhong"
+        },
+        {
+            "id": 556,
+            "nm": "新密",
+            "py": "xinmi"
+        },
+        {
+            "id": 557,
+            "nm": "荥阳",
+            "py": "xingyang"
+        },
+        {
+            "id": 554,
+            "nm": "桐庐",
+            "py": "tonglu"
+        },
+        {
+            "id": 555,
+            "nm": "新郑",
+            "py": "xinzheng"
+        },
+        {
+            "id": 552,
+            "nm": "登封",
+            "py": "dengfeng"
+        },
+        {
+            "id": 553,
+            "nm": "巩义",
+            "py": "gongyishi"
+        },
+        {
+            "id": 567,
+            "nm": "陆丰",
+            "py": "lufeng"
+        },
+        {
+            "id": 566,
+            "nm": "密山",
+            "py": "mishan"
+        },
+        {
+            "id": 564,
+            "nm": "华阴",
+            "py": "huayin"
+        },
+        {
+            "id": 563,
+            "nm": "漠河",
+            "py": "mohe"
+        },
+        {
+            "id": 562,
+            "nm": "兴宁",
+            "py": "xingning"
+        },
+        {
+            "id": 561,
+            "nm": "莱阳",
+            "py": "laiyang"
+        },
+        {
+            "id": 560,
+            "nm": "西塘",
+            "py": "xitang"
+        },
+        {
+            "id": 575,
+            "nm": "霸州",
+            "py": "hbbazhou"
+        },
+        {
+            "id": 574,
+            "nm": "新民",
+            "py": "xinmin"
+        },
+        {
+            "id": 573,
+            "nm": "海阳",
+            "py": "haiyang"
+        },
+        {
+            "id": 572,
+            "nm": "满洲里",
+            "py": "manzhouli"
+        },
+        {
+            "id": 571,
+            "nm": "儋州",
+            "py": "danzhou"
+        },
+        {
+            "id": 570,
+            "nm": "桂平",
+            "py": "guiping"
+        },
+        {
+            "id": 569,
+            "nm": "韶山",
+            "py": "shaoshan"
+        },
+        {
+            "id": 568,
+            "nm": "额尔古纳",
+            "py": "eerguna"
+        },
+        {
+            "id": 516,
+            "nm": "伊川",
+            "py": "yichuan"
+        },
+        {
+            "id": 517,
+            "nm": "兴化",
+            "py": "xinghua"
+        },
+        {
+            "id": 518,
+            "nm": "泰兴",
+            "py": "taixing"
+        },
+        {
+            "id": 519,
+            "nm": "海门",
+            "py": "haimen"
+        },
+        {
+            "id": 512,
+            "nm": "宁海",
+            "py": "ninghai"
+        },
+        {
+            "id": 513,
+            "nm": "乐昌",
+            "py": "lechang"
+        },
+        {
+            "id": 514,
+            "nm": "英德",
+            "py": "yingde"
+        },
+        {
+            "id": 515,
+            "nm": "句容",
+            "py": "jurong"
+        },
+        {
+            "id": 524,
+            "nm": "平湖",
+            "py": "pinghu"
+        },
+        {
+            "id": 525,
+            "nm": "湘阴",
+            "py": "xiangyin"
+        },
+        {
+            "id": 526,
+            "nm": "诸城",
+            "py": "zhucheng"
+        },
+        {
+            "id": 527,
+            "nm": "昌邑",
+            "py": "changyi"
+        },
+        {
+            "id": 520,
+            "nm": "宁乡",
+            "py": "ningxiang"
+        },
+        {
+            "id": 521,
+            "nm": "高邮",
+            "py": "gaoyou"
+        },
+        {
+            "id": 522,
+            "nm": "仪征",
+            "py": "yizheng"
+        },
+        {
+            "id": 523,
+            "nm": "新泰",
+            "py": "xintai"
+        },
+        {
+            "id": 533,
+            "nm": "滨海",
+            "py": "binhai"
+        },
+        {
+            "id": 532,
+            "nm": "射阳",
+            "py": "sheyang"
+        },
+        {
+            "id": 535,
+            "nm": "阜宁",
+            "py": "funing"
+        },
+        {
+            "id": 534,
+            "nm": "响水",
+            "py": "xiangshui"
+        },
+        {
+            "id": 529,
+            "nm": "莱州",
+            "py": "laizhou"
+        },
+        {
+            "id": 528,
+            "nm": "偃师",
+            "py": "yanshi"
+        },
+        {
+            "id": 531,
+            "nm": "沭阳",
+            "py": "shuyang"
+        },
+        {
+            "id": 530,
+            "nm": "嵊州",
+            "py": "shengzhou"
+        },
+        {
+            "id": 541,
+            "nm": "广饶",
+            "py": "guangrao"
+        },
+        {
+            "id": 540,
+            "nm": "奉化",
+            "py": "fenghua"
+        },
+        {
+            "id": 543,
+            "nm": "辛集",
+            "py": "xinji"
+        },
+        {
+            "id": 542,
+            "nm": "临安",
+            "py": "linan"
+        },
+        {
+            "id": 537,
+            "nm": "临清",
+            "py": "linqing"
+        },
+        {
+            "id": 536,
+            "nm": "建湖",
+            "py": "jianhu"
+        },
+        {
+            "id": 539,
+            "nm": "东港",
+            "py": "donggang"
+        },
+        {
+            "id": 538,
+            "nm": "三河",
+            "py": "sanhe"
+        },
+        {
+            "id": 610,
+            "nm": "明光",
+            "py": "mingguang"
+        },
+        {
+            "id": 611,
+            "nm": "乐陵",
+            "py": "laoling"
+        },
+        {
+            "id": 608,
+            "nm": "禹城",
+            "py": "yucheng"
+        },
+        {
+            "id": 609,
+            "nm": "禹州",
+            "py": "yuzhou"
+        },
+        {
+            "id": 614,
+            "nm": "湘乡",
+            "py": "xiangxiang"
+        },
+        {
+            "id": 612,
+            "nm": "钟祥",
+            "py": "zhongxiang"
+        },
+        {
+            "id": 613,
+            "nm": "沙河",
+            "py": "shahe"
+        },
+        {
+            "id": 618,
+            "nm": "龙海",
+            "py": "longhai"
+        },
+        {
+            "id": 619,
+            "nm": "醴陵",
+            "py": "liling"
+        },
+        {
+            "id": 616,
+            "nm": "汝州",
+            "py": "ruzhou"
+        },
+        {
+            "id": 617,
+            "nm": "浏阳",
+            "py": "liuyang"
+        },
+        {
+            "id": 622,
+            "nm": "伊宁",
+            "py": "yining"
+        },
+        {
+            "id": 623,
+            "nm": "海安",
+            "py": "haian"
+        },
+        {
+            "id": 620,
+            "nm": "莱西",
+            "py": "laixi"
+        },
+        {
+            "id": 621,
+            "nm": "南安",
+            "py": "nanan"
+        },
+        {
+            "id": 627,
+            "nm": "长葛",
+            "py": "changge"
+        },
+        {
+            "id": 626,
+            "nm": "天长",
+            "py": "tianchang"
+        },
+        {
+            "id": 625,
+            "nm": "宜城",
+            "py": "yicheng"
+        },
+        {
+            "id": 624,
+            "nm": "苍南",
+            "py": "cangnan"
+        },
+        {
+            "id": 631,
+            "nm": "高州",
+            "py": "gaozhou"
+        },
+        {
+            "id": 630,
+            "nm": "个旧",
+            "py": "gejiu"
         }
     ]
 }

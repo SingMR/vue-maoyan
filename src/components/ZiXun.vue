@@ -109,7 +109,7 @@ export default {
     },
     async getRecommendList() {
       const res = await this.$http.get(
-        '/maoyansh/myshow/ajax/performances/0;st=4;p=1;s=10;tft=0?sellChannel=13&cityId=1&lng=0&lat=0&token=kRA2fg8C4A2mKIf1bqkrxZpj_wEAAAAAWwoAAO7HZXmfdsPlCfS8c39Jb-kE9hzBOR0h1s12C2ewIMqKmHf7C4cqGmqW_k3ZstODLw'
+        '/maoyansh/myshow/ajax/performances/0;st=4;p=1;s=10;tft=0?sellChannel=13&cityId=20&lng=0&lat=0&token=kRA2fg8C4A2mKIf1bqkrxZpj_wEAAAAAWwoAAO7HZXmfdsPlCfS8c39Jb-kE9hzBOR0h1s12C2ewIMqKmHf7C4cqGmqW_k3ZstODLw'
       )
       if (res.status != 200) return false
       console.log(res)

@@ -2,7 +2,7 @@
   <div class="cinema">
     <nav>
       <div class="location">
-        <span class="city-name" @click="selectCity">广州</span>
+        <span class="city-name" @click="selectCity">{{showCityName}}</span>
         <span class="icon"></span>
       </div>
       <div class="search" @click="searchHandle">
@@ -55,20 +55,30 @@
 </template>
 
 <script>
-import { mapState } from "vuex"
+import { mapState } from 'vuex'
 export default {
   name: 'Cinema',
   data() {
     return {
       // cinemaList: [],
       offset: 20,
-      isLoding: true
+      isLoding: true,
+      showCityName: localStorage.getItem('show')
+        ? JSON.parse(localStorage.getItem('show')).nm
+        : '广州'
     }
   },
   created() {
-    this.$store.dispatch('getCinemaList')
-    
+    if (localStorage.getItem('show') != null) {
+      let cityid = JSON.parse(localStorage.getItem('show')).id
+      let resid = JSON.parse(localStorage.getItem('show')).resId
+      this.$store.dispatch('getCinemaList', { cityid, resid })
+    }else {
+      this.$store.dispatch('getCinemaList',null)
+    }
   },
+  mounted() {},
+  watch: {},
   computed: {
     ...mapState(['cinemaList'])
   },
@@ -77,7 +87,7 @@ export default {
       this.$router.push('/yingyuan/detail/' + id)
     },
     searchHandle() {
-      this.$router.push('/search')      
+      this.$router.push('/search')
     },
     selectCity() {
       this.$router.push('/city')
@@ -102,6 +112,7 @@ nav {
   background-color: #f5f5f5;
   .location {
     line-height: 31px;
+    // padding-left: 10px;
     .city-name {
       color: #666;
       font-size: 15px;
@@ -111,7 +122,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 278px;
+    width: 260px;
     height: 27px;
     border: 1px solid #eee;
     border-radius: 5px;
