@@ -13,7 +13,7 @@
         @blur="usernameBlur"
         @focus="usernameFocus"
       />
-      <span class="one" ref="usernameRef" @mousedown="clearUn" @click.prevent="clearUn">×</span>
+      <span class="one" ref="usernameRef" @mousedown.prevent="clearUn" @click="clearUn">×</span>
       <input
         class="password"
         :type="pdType? 'password': 'text'"
@@ -25,7 +25,7 @@
         @focus="passwordFocus"
       />
       <div class="tip" ref="tipRef">账号或密码错误，请重新输入</div>
-      <span class="two" ref="passwordRef" @click="clearPd">×</span>
+      <span class="two" ref="passwordRef" @mousedown.prevent="clearPd" @click="clearPd">×</span>
       <div class="show-pd" @click="changeShowPd">
         <img :src="isChange? showPd:hiddenPd" alt ref="imgRef" />
       </div>
@@ -98,8 +98,6 @@ export default {
   methods: {
     usernameFocus() {
       if (this.username) {
-        console.log(1)
-
         this.$refs.usernameRef.style.display = 'block'
       }
     },
@@ -128,7 +126,8 @@ export default {
     },
     handForm() {
       if (this.username == '13556730677' && this.password == '123456') {
-        sessionStorage.setItem('token', 'welcome to my house!')
+        sessionStorage.setItem('token', Math.random().toString(16).slice(2))
+        sessionStorage.setItem('selected', 'dianying')
         this.$router.push('/')
       } else {
         this.$refs.tipRef.style.display = 'block'
@@ -205,7 +204,7 @@ export default {
   .show-pd {
     position: absolute;
     top: 76px;
-    right: 85px;
+    right: 65px;
     width: 18px;
     height: 10px;
     img {
@@ -216,7 +215,7 @@ export default {
   .search-pd {
     position: absolute;
     bottom: 107px;
-    right: 20px;
+    right: 5px;
     color: #666;
     font-size: 12px;
   }

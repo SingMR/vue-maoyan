@@ -58,6 +58,125 @@ input,button {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+.mint-indicator-wrapper {
+    display: flex;
+    align-items: center;
+    top: 160px;
+    left: 50%;
+    width: 150px;
+    height: 100px;
+    background: transparent;
+}
+.mint-indicator-spin {
+    display: inline-block;
+    margin-right: 10px;
+}
+.mint-indicator-text {
+    color: #B0B0B0;
+    font-size: 14px;
+    padding-bottom: 10px;
+}
 
+.mint-spinner-snake {
+    border: 2px solid transparent !important;
+    border-color: #8ED599 !important;
+    border-right-color: transparent !important;  
+    height: 13px !important;
+    width: 13px !important;
+}
 
+.el-dialog__header {
+    padding: 0;
+}
+.el-dialog__body {
+    padding: 0;
+}
+.el-dialog__wrapper {
+    overflow: unset;
+}
+.el-tabs__header {
+    margin: 0;
+}
+.el-tabs__nav-wrap {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+.one .el-tabs__item {
+    padding: 0;
+    color: #777;
+    font-size: 13px;
+}
+.el-tabs__item.is-active {
+    color: #f03d37;
+}
+.el-tabs__nav-wrap::after {
+    background-color: transparent;
+}
+.el-tabs__active-bar {
+    background-color: transparent;
+}
+.second .el-tabs__item {
+    font-size: 16px;
+    margin: 0 70px;
+}
   
+.second .el-tabs__nav-wrap {
+    border: 0;
+}
+
+.three .el-tabs__item {
+    margin: 0;
+    font-size: 14px;
+    padding-left: 13px !important;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.three .el-tabs__content {
+    height: 480px;
+    padding: 10px 0 0 30px;
+    margin-right: 15px;
+    background-color: #f5f5f5;
+    overflow-y: scroll;
+}
+.three .el-tabs__item.is-active {
+    background-color: #f5f5f5;
+}
+
+.el-tabs--left .el-tabs__header.is-left {
+    margin: 0;
+    height: 530px;
+    /* margin-top: -30px; */
+}
+.three .el-tabs__nav-scroll {
+    /* overflow-y: scroll;
+    height: 470px; */
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.el-tabs__nav-prev {
+    display: none !important;
+}
+.el-tabs__nav-next {
+    display: none !important;
+}
+.el-tabs--left .el-tabs__nav-wrap.is-left.is-scrollable {
+    padding: 0;
+}
+.el-tabs--left .el-tabs__item.is-left {
+    text-align: left;
+}
+.el-tabs__item:last-child {
+    padding-right: 0 !important;
+}
+.el-tabs--left, .el-tabs--right {
+    overflow: unset;
+}
+.el-tabs--left .el-tabs__nav.is-left {
+    width: 112px;
+    overflow-y: scroll;
+    height: 470px;
+}

@@ -23,7 +23,7 @@
           <div v-for="(item, index) in recommendListLeft" :key="index">
             <div class="recommend-item-wrapper">
               <div class="poseter-wrapper">
-                <img :src="item.posterUrl" alt />
+                <img v-lazy="item.posterUrl" alt />
               </div>
               <div class="content-wrapper">
                 <div class="title">[{{item.cityName}}] {{item.name}}</div>
@@ -108,11 +108,11 @@ export default {
       this.starsList = res.data.data
     },
     async getRecommendList() {
+      var cityId = JSON.parse(localStorage.getItem('show')).id
       const res = await this.$http.get(
-        '/maoyansh/myshow/ajax/performances/0;st=4;p=1;s=10;tft=0?sellChannel=13&cityId=20&lng=0&lat=0&token=kRA2fg8C4A2mKIf1bqkrxZpj_wEAAAAAWwoAAO7HZXmfdsPlCfS8c39Jb-kE9hzBOR0h1s12C2ewIMqKmHf7C4cqGmqW_k3ZstODLw'
+        `/maoyansh/myshow/ajax/performances/0;st=4;p=1;s=10;tft=0?sellChannel=13&cityId=${cityId}&lng=0&lat=0&token=kRA2fg8C4A2mKIf1bqkrxZpj_wEAAAAAWwoAAO7HZXmfdsPlCfS8c39Jb-kE9hzBOR0h1s12C2ewIMqKmHf7C4cqGmqW_k3ZstODLw`
       )
       if (res.status != 200) return false
-      console.log(res)
       this.total = res.data.paging.totalHits
       var recommendListFilter = res.data.data
       recommendListFilter.filter((item, index) => {
@@ -158,6 +158,11 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+image[lazy=loading] {
+  width: 40px;
+  height: 300px;
+  margin: auto;
+}
 .zixun {
   margin-top: -50px;
 }

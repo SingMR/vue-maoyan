@@ -18,7 +18,7 @@
         @click="del"
         ref="delRef"
       />
-      <span class="back">取消</span>
+      <span class="back" @click="goBack">取消</span>
     </div>
     <div class="type" v-if="movieListFilter.length == 0?false:true">电影/电视剧/综艺</div>
     <article>
@@ -80,7 +80,13 @@ export default {
   },
   created() {    
     this.$store.dispatch('getMovieList')
-    this.$store.dispatch('getCinemaList')
+    if (localStorage.getItem('show') != null) {
+        let cityid = JSON.parse(localStorage.getItem('show')).id
+        let resid = JSON.parse(localStorage.getItem('show')).resId
+        this.$store.dispatch('getCinemaList', { cityid, resid })
+      } else {
+        this.$store.dispatch('getCinemaList', null)
+      }
   },
   mounted() {
     this.$store.commit('getCinemaTitle', false)
@@ -125,7 +131,7 @@ watch: {
   },
   methods: {
     goBack() {
-      this.$router.go(-1)
+      this.$router.push('/yingyuan')
     },
     del() {
       this.ipt = ''
@@ -241,14 +247,14 @@ article {
 .line {
   // width: 100%;
   height: 10px;
-  margin: 30px -15px 10px;
+  margin: 30px -15px 0;
   background-color: #f5f5f5;
 }
 .ci-type {
   margin-left: -15px;
   font-size: 15px;
   color: #999;
-  padding: 0 15px 9px;
+  padding: 9px 15px 9px;
   background-color: #fff;
   border-bottom: 1px solid #eee;
 }

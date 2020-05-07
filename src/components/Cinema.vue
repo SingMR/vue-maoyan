@@ -14,18 +14,18 @@
       </div>
     </nav>
     <section>
-      <ul class="navbar">
-        <li>
-          全城
+      <ul class="navbar" ref="navRef">
+        <li @click="quanCheng('0')">
+          <span class="quancheng text-ellipsis" ref="qcRef">全城</span>
           <span class="icon"></span>
         </li>
-        <li>
-          品牌
+        <li @click="pinPai('1')">
+          <span class="pinpai text-ellipsis" ref="ppRef">品牌</span>
           <span class="icon"></span>
         </li>
-        <li>
-          特色
-          <span class="icon"></span>
+        <li @click="teSe('2')">
+          <span class="pinpai text-ellipsis" ref="tsRef">特色</span>
+          <span class="icon" ref="teSeRef"></span>
         </li>
       </ul>
     </section>
@@ -51,11 +51,148 @@
         <div class="distance">{{item.distance}}</div>
       </div>
     </article>
+    <el-dialog
+      :visible.sync="allDialogVisible"
+      width="100%"
+      :show-close="false"
+      @open="qcHandleOpen"
+    >
+      <div class="one">
+        <el-tabs v-model="activeName">
+          <el-tab-pane name="0">
+            <span slot="label" class="lable-name">
+              <span class="label-one" style="margin-right: -51px;">{{cityName}}</span>
+              <i class="el-icon-caret-bottom" ref="qcIconRef" style="margin-left: 51px;"></i>
+            </span>
+            <div class="second">
+              <div class="line-r" ref="linrRef"></div>
+              <div class="line-l" ref="linlRef"></div>
+              <el-tabs v-model="qcactiveName">
+                <el-tab-pane label="商区" name="shop">
+                  <div class="three">
+                    <el-tabs tab-position="left" v-model="shopactiveName" style="height: 200px;">
+                      <el-tab-pane
+                        :label="shop.name+' ('+shop.count+')'"
+                        v-for="shop in districtList"
+                        :key="shop.id"
+                      >
+                        <div
+                          class="name-count"
+                          v-for="shop1 in shop.subItems"
+                          :key="shop1.id"
+                          @click="shopClikHandle(shop1.name,shop.id,shop1.id,shop.name)"
+                          ref="shopRef"
+                        >
+                          <i class="el-icon-check"></i>
+                          <span class="name">{{shop1.name}}</span>
+                          <span class="count">{{shop1.count}}</span>
+                        </div>
+                      </el-tab-pane>
+                    </el-tabs>
+                  </div>
+                </el-tab-pane>
+                <el-tab-pane label="地铁站" name="subway">
+                  <div class="three">
+                    <el-tabs tab-position="left" style="height: 200px;">
+                      <el-tab-pane
+                        :label="sub.name +' ('+sub.count+')'"
+                        v-for="sub in subwayList"
+                        :key="sub.id"
+                      >
+                        <div
+                          class="name-count"
+                          v-for="sub1 in sub.subItems"
+                          :key="sub1.id"
+                          ref="subwayRef"
+                          @click="subwayClikHandle(sub1.name,sub.id,sub1.id,sub.name)"
+                        >
+                          <i class="el-icon-check"></i>
+                          <span class="name">{{sub1.name}}</span>
+                          <span class="count">{{sub1.count}}</span>
+                        </div>
+                      </el-tab-pane>
+                    </el-tabs>
+                  </div>
+                </el-tab-pane>
+              </el-tabs>
+            </div>
+          </el-tab-pane>
+          <el-tab-pane name="1">
+            <span slot="label" class="lable-name label-spec">
+              <span class="label-two">{{brandName}}</span>
+              <i class="el-icon-caret-bottom" ref="ppIconRef"></i>
+            </span>
+            <div class="pp-list">
+              <div
+                class="pp-list-item"
+                v-for="(brand, index) in brandList"
+                :key="brand.id"
+                @click="brandClikHandle(brand.name,index, brand.id)"
+                ref="brandRef"
+              >
+                <i class="el-icon-check" style="visibility: hidden;"></i>
+                <div class="pp-name-count">
+                  <span class="pp-name">{{brand.name}}</span>
+                  <span class="pp-count">{{brand.count}}</span>
+                </div>
+              </div>
+            </div>
+          </el-tab-pane>
+          <el-tab-pane name="2">
+            <span slot="label" class="lable-name">
+              <span class="label-three">{{characteristicName}}</span>
+              <i class="el-icon-caret-bottom" ref="tsIconRef"></i>
+            </span>
+            <div class="tab-content">
+              <div class="special">
+                <div class="spec-func">
+                  <p class="title">特色功能</p>
+                  <div class="tag-desc">
+                    <span
+                      class="text-ellipsis"
+                      v-for="(service,index) in serviceList"
+                      :key="service.id"
+                      @click="serviceHandle(index,service.id)"
+                      ref="serviceRef"
+                    >{{service.name}}</span>
+                  </div>
+                </div>
+                <div class="spec-hall">
+                  <p class="title">特殊厅</p>
+                  <div class="tag-desc">
+                    <span
+                      class="text-ellipsis"
+                      v-for="(hall, index) in hallTypeList"
+                      :key="hall.id"
+                      @click="hallTypeHandle(index,hall.id)"
+                      ref="hallRef"
+                    >{{hall.name}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="footer">
+                <div class="reset-certain">
+                  <button @click="resetHandle">重置</button>
+                  <button class="btn" @click="certainHandle">确定</button>
+                </div>
+              </div>
+            </div>
+          </el-tab-pane>
+        </el-tabs>
+      </div>
+    </el-dialog>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
+// 异常处理
+Vue.config.errorHandler = function(err, vm, info) {
+  console.log(`Error: ${err.toString()}\nInfo: ${info}`)
+}
 import { mapState } from 'vuex'
+import { Indicator } from 'mint-ui'
+import { shop_subway, getPinPai, getIcon } from '../../static/js/shop_subway.js'
 export default {
   name: 'Cinema',
   data() {
@@ -65,20 +202,84 @@ export default {
       isLoding: true,
       showCityName: localStorage.getItem('show')
         ? JSON.parse(localStorage.getItem('show')).nm
-        : '广州'
+        : '广州',
+      // 全城对话框的显示与隐藏
+      allDialogVisible: false,
+      activeName: 'quanCheng',
+      districtList: [],
+      subwayList: [],
+      // 存储品牌影城列表
+      brandList: [],
+      num: '',
+      qcactiveName: 'shop',
+      shopactiveName: '',
+      cityName: '全城',
+      brandName: '品牌',
+      characteristicName: '特色',
+      // 特殊厅
+      hallTypeList: [],
+      // 特色功能
+      serviceList: [],
+      districtId: -1,
+      areaId: -1,
+      lineId: -1,
+      stationId: -1,
+      brandId: -1,
+      hallId: -1,
+      serviceId: -1,
+      serviceIndex: '',
+      hallIndex: ''
     }
   },
   created() {
-    if (localStorage.getItem('show') != null) {
-      let cityid = JSON.parse(localStorage.getItem('show')).id
-      let resid = JSON.parse(localStorage.getItem('show')).resId
-      this.$store.dispatch('getCinemaList', { cityid, resid })
-    }else {
-      this.$store.dispatch('getCinemaList',null)
+    this.getFilterCinemas()
+    // tabbar的跳转不出现加载提示
+    if (this.showCityName != sessionStorage.getItem('showCityName')) {
+      this.$store.commit('initCinemaList', [])
+    }
+    sessionStorage.setItem('showCityName', this.showCityName)
+  },
+  mounted() {
+    if (this.cinemaList.length == 0) {
+      Indicator.open({
+        text: '正在加载...',
+        spinnerType: 'snake'
+      })
+      var timer = setTimeout(() => {
+        this.load()
+        Indicator.close()
+      }, 3000)
+    } else {
+      this.load()
     }
   },
-  mounted() {},
-  watch: {},
+  beforeDestroy() {
+    this.timer = null
+  },
+  watch: {
+    activeName(val) {
+      this.$refs.qcIconRef.style.transform = ''
+      this.$refs.ppIconRef.style.transform = ''
+      this.$refs.tsIconRef.style.transform = ''
+      if (val == 0) {
+        this.$refs.qcIconRef.style.transform = 'rotateZ(182deg)'
+      } else if (val == 1) {
+        this.$refs.ppIconRef.style.transform = 'rotateZ(182deg)'
+      } else {
+        this.$refs.tsIconRef.style.transform = 'rotateZ(182deg)'
+      }
+    },
+    qcactiveName(val) {
+      if (val == 'shop') {
+        this.$refs.linlRef.style.display = 'inline-block'
+        this.$refs.linrRef.style.display = 'none'
+      } else if (val == 'subway') {
+        this.$refs.linlRef.style.display = 'none'
+        this.$refs.linrRef.style.display = 'inline-block'
+      }
+    },
+    shopactiveName(val) {}
+  },
   computed: {
     ...mapState(['cinemaList'])
   },
@@ -91,15 +292,314 @@ export default {
     },
     selectCity() {
       this.$router.push('/city')
+    },
+    load() {
+      if (localStorage.getItem('show') != null) {
+        let cityid = JSON.parse(localStorage.getItem('show')).id
+        let resid = JSON.parse(localStorage.getItem('show')).resId
+        this.$store.dispatch('getCinemaList', { cityid, resid })
+      } else {
+        this.$store.dispatch('getCinemaList', null)
+      }
+    },
+    quanCheng(value) {
+      this.allDialogVisible = true
+      this.num = value
+      this.activeName = '0'
+    },
+    pinPai(value) {
+      this.allDialogVisible = true
+      this.num = value
+      this.activeName = '1'
+    },
+    teSe(value) {
+      this.allDialogVisible = true
+      this.num = value
+      this.activeName = '2'
+    },
+    qcHandleOpen() {
+      this.$nextTick(_ => {
+        if (
+          sessionStorage.getItem('certainHandle') &&
+          sessionStorage.getItem('service-default')
+        ) {
+          this.$refs.serviceRef[
+            sessionStorage.getItem('service-default')
+          ].className = 'text-ellipsis service-chosen'
+        }
+        if (!sessionStorage.getItem('certainHandle')) {
+          this.$refs.hallRef.filter((item, index) => {
+            item.className = 'text-ellipsis'
+          })
+          this.$refs.serviceRef.filter((item, index) => {
+            item.className = 'text-ellipsis'
+          })
+          this.$refs.hallRef[0].className = 'text-ellipsis service-chosen'
+          this.$refs.serviceRef[0].className = 'text-ellipsis service-chosen'
+        }
+        // if(sessionStorage.getItem('certainHandle') != 'confirm') {
+        //   this.$refs.serviceRef[0].className = 'text-ellipsis service-chosen'
+        // }
+        if (!sessionStorage.getItem('brand-default')) {
+          this.$refs.brandRef[0].children[0].style.visibility = 'visible'
+          this.$refs.brandRef[0].style.color = '#dd403b'
+          this.$refs.brandRef[0].children[1].children[0].style.color = '#dd403b'
+        }
+        this.$refs.toRef.children[this.num].style.transform = 'rotateZ(182deg)'
+        this.$refs.toRef.children[this.num].style.color = '#e54847'
+      })
+    },
+    async getFilterCinemas() {
+      let id = JSON.parse(localStorage.getItem('show')).id
+      const { data: res } = await this.$http.get(
+        `/ajax/filterCinemas?ci=${id}&optimus_uuid=2E686A407F4411EA8C922F818FF720E83748459079E94ED9850FF08D9BC60368&optimus_risk_level=71&optimus_code=10`
+      )
+      this.districtList = res.district.subItems
+      this.subwayList = res.subway.subItems
+      this.brandList = res.brand.subItems
+      this.hallTypeList = res.hallType.subItems
+      this.serviceList = res.service.subItems
+    },
+    shopClikHandle(name, districtId, areaId, shopName) {
+      this.shop_subwayClickHandle(this.$refs.shopRef, name, shopName)
+      // 根据选择的地点进行请求
+      let cityid = JSON.parse(localStorage.getItem('show')).id
+      let resid = JSON.parse(localStorage.getItem('show')).resId
+      // 先保存起来，以至于点击地铁站的时候判断有没有点击过商区
+      this.districtId = districtId
+      this.areaId = areaId
+      if (districtId) {
+        Indicator.open({
+          text: '正在加载...',
+          spinnerType: 'snake'
+        })
+        var timer = setTimeout(() => {
+          this.$store.dispatch('getCinemaList', {
+            cityid,
+            resid,
+            districtId,
+            areaId,
+            lineId: this.lineId,
+            stationId: this.stationId,
+            brandId: this.brandId,
+            serviceId: this.serviceId,
+            hallId: this.hallId
+          })
+          Indicator.close()
+        }, 3000)
+      }
+    },
+    subwayClikHandle(name, lineId, stationId, subName) {
+      this.shop_subwayClickHandle(this.$refs.subwayRef, name, subName)
+      let cityid = JSON.parse(localStorage.getItem('show')).id
+      let resid = JSON.parse(localStorage.getItem('show')).resId
+      // 先保存起来，以至于点击商区的时候判断有没有点击过地铁站
+      this.lineId = lineId
+      this.stationId = stationId
+      if (lineId) {
+        Indicator.open({
+          text: '正在加载...',
+          spinnerType: 'snake'
+        })
+        var timer = setTimeout(() => {
+          this.$store.dispatch('getCinemaList', {
+            cityid,
+            resid,
+            districtId: this.districtId,
+            areaId: this.areaId,
+            lineId,
+            stationId,
+            brandId: this.brandId,
+            serviceId: this.serviceId,
+            hallId: this.hallId
+          })
+          Indicator.close()
+        }, 3000)
+      }
+    },
+    shop_subwayClickHandle(arr, name, shopName) {
+      // 排它思想
+      for (var i = 0; i < arr.length; i++) {
+        arr[i].style.color = ''
+        arr[i].children[0].style.display = 'none'
+      }
+      arr.filter((item, index) => {
+        if (item.children[1].innerText == name) {
+          item.children[0].style.display = 'inline-block'
+          item.style.color = '#f03d37'
+        }
+      })
+      if (name == '全部') {
+        alert(shopName)
+        this.cityName = shopName
+        this.$refs.qcRef.innerText = shopName
+      } else {
+        this.cityName = name
+        this.$refs.qcRef.innerText = name
+      }
+      this.allDialogVisible = false
+      // 更换地区时，清空影院数组
+      this.$store.commit('initCinemaList', [])
+    },
+    brandClikHandle(name, val, brandId) {
+      sessionStorage.setItem('brand-default', name)
+      this.$refs.brandRef.filter((item, index) => {
+        if (val == index) {
+          item.children[0].style.visibility = 'visible'
+          item.style.color = '#dd403b'
+          item.children[1].children[0].style.color = '#dd403b'
+        } else {
+          item.children[0].style.visibility = 'hidden'
+          item.style.color = ''
+          item.children[1].children[0].style.color = ''
+        }
+      })
+      this.brandId = brandId
+      this.$store.commit('initCinemaList', [])
+      let cityid = JSON.parse(localStorage.getItem('show')).id
+      let resid = JSON.parse(localStorage.getItem('show')).resId
+      if (brandId) {
+        Indicator.open({
+          text: '正在加载...',
+          spinnerType: 'snake'
+        })
+        var timer = setTimeout(() => {
+          this.$store.dispatch('getCinemaList', {
+            cityid,
+            resid,
+            districtId: this.districtId,
+            areaId: this.areaId,
+            lineId: this.lineId,
+            stationId: this.stationId,
+            brandId,
+            serviceId: this.serviceId,
+            hallId: this.hallId
+          })
+          Indicator.close()
+        }, 3000)
+      }
+      this.brandName = name
+      this.$refs.ppRef.innerText = name
+      this.allDialogVisible = false
+    },
+    serviceHandle(val, serviceId) {
+      sessionStorage.setItem('service-default', val)
+      this.$refs.serviceRef.filter((item, index) => {
+        if (val == index) {
+          item.className = 'text-ellipsis service-chosen'
+        } else {
+          item.className = 'text-ellipsis'
+        }
+      })
+      this.serviceId = serviceId
+      this.serviceIndex = val
+    },
+    hallTypeHandle(val, hallId) {
+      sessionStorage.setItem('hall-default', val)
+      this.$refs.hallRef.filter((item, index) => {
+        if (val == index) {
+          item.className = 'text-ellipsis service-chosen'
+        } else {
+          item.className = 'text-ellipsis'
+        }
+      })
+      this.hallId = hallId
+      this.hallIndex = val
+    },
+    resetHandle() {
+      this.$refs.hallRef.filter((item, index) => {
+        item.className = 'text-ellipsis'
+      })
+      this.$refs.serviceRef.filter((item, index) => {
+        item.className = 'text-ellipsis'
+      })
+      this.$refs.serviceRef[0].className = 'text-ellipsis service-chosen'
+      this.$refs.hallRef[0].className = 'text-ellipsis service-chosen'
+    },
+    certainHandle() {
+      sessionStorage.setItem('certainHandle', 'confirm')
+      this.$store.commit('initCinemaList', [])
+      let cityid = JSON.parse(localStorage.getItem('show')).id
+      let resid = JSON.parse(localStorage.getItem('show')).resId
+      if (this.serviceId || this.hallId ) {
+        Indicator.open({
+          text: '正在加载...',
+          spinnerType: 'snake'
+        })
+        var timer = setTimeout(() => {
+          this.$store.dispatch('getCinemaList', {
+            cityid,
+            resid,
+            districtId: this.districtId,
+            areaId: this.areaId,
+            lineId: this.lineId,
+            stationId: this.stationId,
+            brandId:this.brandId,
+            serviceId: this.serviceId,
+            hallId: this.hallId
+          })
+          Indicator.close()
+        }, 3000)
+      }
+      if(this.serviceIndex != 0 || this.hallIndex != 0) {
+        this.$refs.tsRef.style.color = '#e54847'
+        this.$refs.teSeRef.className = 'icon ts-icon'
+        console.log(this.$refs.tsIconRef.style);       
+      }else {
+        this.$refs.tsRef.style.color = ''
+        this.$refs.teSeRef.className = 'icon'
+      }
+      this.allDialogVisible = false
     }
   }
 }
 </script>
 <style lang="less" scoped>
+.lable-name {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  span {
+    display: inline-block;
+    text-align: right;
+    width: 70px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+.label-spec {
+  margin: 0 20px 0 10px;
+}
+.el-icon-caret-bottom {
+  font-size: 13px;
+}
+
+.line-r {
+  position: absolute;
+  display: none;
+  top: 43px;
+  right: 38px;
+  width: 45%;
+  height: 2.5px;
+  background-color: red;
+  z-index: 99;
+}
+.line-l {
+  position: absolute;
+  top: 43px;
+  left: 0;
+  width: 45%;
+  height: 2.5px;
+  background-color: red;
+  z-index: 99;
+}
 .cinema {
+  position: relative;
   padding-top: 90px;
   padding-bottom: 10px;
 }
+
 nav {
   display: flex;
   position: fixed;
@@ -141,22 +641,33 @@ nav {
 section {
   position: fixed;
   top: 94px;
+  left: 0;
   width: 100%;
-  padding: 10px 20px;
+  padding: 8px 0;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
   background-color: #fff;
-  .navbar {
-    display: flex;
-    li {
-      width: 33.3%;
-      padding: 3px 0;
-      text-align: center;
-      font-size: 13px;
-      color: #777;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  li {
+    width: 33.3%;
+    padding: 3px 0;
+    text-align: center;
+    font-size: 13px;
+    color: #777;
+    // line-height: 26px;
+    span:nth-child(1) {
+      display: inline-block;
+      max-width: 90px;
+    }
+    .quancheng {
+      margin-right: -3px;
     }
   }
 }
+
 .icon {
   display: inline-block;
   width: 0;
@@ -164,6 +675,10 @@ section {
   border: 4px solid transparent;
   border-top-color: #b0b0b0;
 }
+.ts-icon {
+  border-top-color: #e54847;
+}
+
 .navbar li:nth-child(2) {
   border-right: 1px solid #ccc;
   border-left: 1px solid #ccc;
@@ -223,7 +738,7 @@ section {
 .snack,
 .vipTag {
   display: inline-block;
-  color: #f90 !important    ;
+  color: #f90 !important;
   border: 1px solid #f90;
   padding: 0 3px;
   height: 15px;
@@ -233,5 +748,121 @@ section {
 }
 .hallType {
   margin-right: 5px;
+}
+.three {
+  margin-top: 8px;
+  height: 457px;
+}
+
+.name-count {
+  position: relative;
+  margin-bottom: 20px;
+  padding-left: 18px;
+  .el-icon-check {
+    display: none;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    font-size: 15px;
+  }
+  .count {
+    float: right;
+    margin-right: 20px;
+    font-size: 12px;
+  }
+}
+.pp-list {
+  height: 366px;
+  margin-right: 40px;
+  overflow-y: scroll;
+  .pp-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 10px 13px 15px;
+    border-bottom: 1px solid #eee;
+    color: #8f9296;
+    .pp-name-count {
+      width: 95%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .pp-name {
+        color: #333;
+        font-size: 15px;
+      }
+      .pp-count {
+        text-align: right;
+        font-size: 12px;
+      }
+    }
+  }
+}
+.tab-content {
+  position: relative;
+  height: 350px;
+  .special {
+    overflow: scroll;
+    height: 290px;
+    margin: 15px 30px 0 10px;
+    .spec-hall,
+    .spec-func {
+      margin-bottom: 15px;
+    }
+  }
+}
+.tag-desc {
+  span {
+    display: inline-block;
+    width: 71px;
+    height: 38px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 38px;
+    font-size: 12px;
+    color: #878787;
+    margin-top: 10px;
+    margin-right: 8px;
+  }
+}
+.title {
+  font-size: 15px;
+  color: #777;
+}
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  .reset-certain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    margin-right: 15px;
+    background-color: #fafafa;
+    border-top: 1px solid #e5e5e5;
+    button {
+      width: 26%;
+      height: 36px;
+      line-height: 36px;
+      font-size: 14px;
+      color: #777;
+      background-color: #fff;
+      border: 1px solid #e5e5e5;
+      text-align: center;
+      border-radius: 5px;      
+    }
+    .btn {
+      color: #fff;
+      background: #f03d37;
+    border: 1px solid #f03d37;
+    }
+  }
+}
+.service-chosen {
+  background: #fcf0f0;
+  color: #f03d37 !important;
+  border: 1px solid #f03d37 !important;
 }
 </style>

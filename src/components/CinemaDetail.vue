@@ -30,7 +30,7 @@
     <div class="gap"></div>
     <div class="tuan-list">
       <p>影院超值套餐</p>
-      <div class="tuan-item" v-for="item in tuanItemList" :key="item.dealId" @click="goOrderPage(item.dealId)">
+      <div class="tuan-item" v-for="item in tuanItemList" :key="item.dealId" @click="goOrderPage(item.dealId,item.redirectUrl)">
         <!-- 图片要包含在一个盒子里，除非图片浮动浮动，不然直接给大小会造成不适设置的样式 -->
         <div>
           <img :src="item.imageUrl | cinemafilter" alt />
@@ -85,6 +85,7 @@ export default {
     // this.$store.commit('getTitle', this.cinemaDataList.nm)
   },
   beforeDestroy() {
+    alert(1)
     // bus.$emit('tabShow', true)
     this.$store.commit('changeTabbarStatus', true)
     this.$store.commit('getCinemaTitle', true)
@@ -95,6 +96,7 @@ export default {
         `/ajax/cinemaDetail?cinemaId=${this.id}&optimus_uuid=1E81DA407B2E11EAB7392D27D81CD6E34D268A8D3C6F48AE921DEBC8402D2A9D&optimus_risk_level=71&optimus_code=10`,
       )
       // this.tuanItemList = res.dealList.dealList
+      
       
       this.cinemaDataList = res.cinemaData
       this.cinemaTitle = res.cinemaData.nm
@@ -107,8 +109,8 @@ export default {
     goBack() {
       this.$router.go(-1)
     },
-    goOrderPage(id) {  
-      this.$router.push('/order/' +id)
+    goOrderPage(id,cinemaId) {  
+      this.$router.push({path: '/order/'+id,query:{cinemaId}})
     }
   }
 }

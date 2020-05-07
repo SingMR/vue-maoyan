@@ -14,7 +14,7 @@
       <!-- swiper初始化过早 所以需要加key diff算法 -->
       <Swiper :key="getLunBo.length">
         <div class="swiper-slide" v-for="(item, index) in getLunBo" :key="index">
-          <img v-lazy="item.imgUrl" alt />
+          <img :src="item.imgUrl" alt />
         </div>
       </Swiper>
     </div>
@@ -22,7 +22,9 @@
       <router-link :to="'hot'" tag="div" activeClass="myactive" exact>正在热映</router-link>
       <router-link :to="'coming'" tag="div" activeClass="myactive">即将上映</router-link>
     </div>
-    <router-view></router-view>
+    <keep-alive :include="incluePages">
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 <script>
@@ -33,6 +35,7 @@ export default {
     return {
       getLunBo: [],
       isFixed: false,
+      incluePages: ['Hot', 'Coming'],
     }
   },
   created() {
@@ -47,9 +50,6 @@ export default {
       this.getLunBo = res.data.data
     })
   },
-  beforeMount() {
-    // sessionStorage.setItem('selected', 'dianying') 
-  },
   mounted() {
     window.onscroll = this.getFiexdHeight
   },
@@ -57,7 +57,7 @@ export default {
     window.onscroll = ''
   },
   methods: {
-    getFiexdHeight() {       
+    getFiexdHeight() {
       if (document.documentElement.scrollTop >= this.$refs.myBar.offsetHeight) {
         this.isFixed = true
       } else {
@@ -72,7 +72,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-img[lazy=loading] {
+img[lazy='loading'] {
   width: 40px;
   height: 300px;
   margin: auto;

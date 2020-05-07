@@ -74,6 +74,11 @@ export default {
   },
   created() {
     this.getOrderList()
+    // 通过正则获取cinemaId
+    // let cinemaId = this.$route.query.cinemaId
+    // cinemaId = cinemaId.match(/cinemaId=(\d+)\&/)[1] 
+    
+    
   },
   mounted() {
     this.$store.commit('getCinemaTitle', false)
@@ -92,8 +97,6 @@ export default {
   },
   watch: {
     num(val, oldVal) {
-      // console.log(val);
-      
       if(val == 1) {
         this.$refs.subRef.style.color = '#999'
         this.$refs.subRef.style.backgroundColor = '#dcdcdc'

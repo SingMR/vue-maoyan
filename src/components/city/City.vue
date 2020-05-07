@@ -11,10 +11,10 @@
       <div>
         <span
           class="city-list"
-          v-for="item in historyCity"
-          :key="item.cityid"
-          @click="selecteArea(item)"
-        >{{item.nm}}</span>
+          v-for="his in historyCity"
+          :key="his.cityid"
+          @click="selecteArea(his)"
+        >{{his.nm}}</span>
       </div>
     </div>
     <div id="hot" class="hot-city same">
@@ -22,10 +22,10 @@
       <div>
         <span
           class="hot-city-list"
-          v-for="item in hotCity"
-          :key="item.id"
-          @click="selecteArea(item)"
-        >{{item.nm}}</span>
+          v-for="hot in hotCity"
+          :key="hot.id"
+          @click="selecteArea(hot)"
+        >{{hot.nm}}</span>
       </div>
     </div>
     <div class="all-city" v-for="(item, index) in city" :key="index">
@@ -48,7 +48,7 @@
   </div>
 </template>
 <script>
-import '../../../static/js/lift.js'
+import { lift } from '../../../static/js/lift'
 export default {
   name: 'City',
   data() {
@@ -63,6 +63,7 @@ export default {
     }
   },
   created() {
+    lift()
     this.getHotCity()
   },
   mounted() {
@@ -208,12 +209,7 @@ export default {
         return a - b
       }
     },
-    selecteArea(val) {     
-      // if(val.cityid) {
-      //   var params = val
-      // }else {
-      //   var params = { cityid: val.id, cityname: val.nm, selectci: true }
-      // }
+    selecteArea(val) {
       // unshift将元素加到数组最前面 改变原先数组
       this.historyCity.unshift(val)
       // 检验在存储中是否重复
@@ -221,9 +217,7 @@ export default {
       if (result) {
         var obj = {}
         var unique = result.filter(item => {
-          return obj.hasOwnProperty(item.id)
-            ? false
-            : (obj[item.id] = true)
+          return obj.hasOwnProperty(item.id) ? false : (obj[item.id] = true)
         })
         // end---
         this.historyCity = unique
@@ -231,8 +225,14 @@ export default {
           this.historyCity.pop()
         }
         localStorage.setItem('history-city', JSON.stringify(this.historyCity))
+        // 动态控制影院keep-alive是否使用
+        if (val.id != JSON.parse(localStorage.getItem('show')).id) {
+          this.$store.commit('getIncludePages', ['Film'])
+        }else {
+           this.$store.commit('getIncludePages', ['Cinema','Film'])
+        }
         // 用来Cinema页面获取城市数据
-        localStorage.setItem('show', JSON.stringify(val))
+        localStorage.setItem('show', JSON.stringify(val))      
         this.$router.push('/yingyuan')
       }
     }
