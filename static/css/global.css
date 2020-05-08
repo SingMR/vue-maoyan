@@ -4,9 +4,9 @@
 }
 body {
     padding: 50px 0 35px 0;
-    background-color:#fff;
-    
+    background-color:#fff;   
 }
+
 li {
     list-style: none;
 }
@@ -148,12 +148,9 @@ input,button {
 .el-tabs--left .el-tabs__header.is-left {
     margin: 0;
     height: 530px;
-    /* margin-top: -30px; */
+
 }
-.three .el-tabs__nav-scroll {
-    /* overflow-y: scroll;
-    height: 470px; */
-}
+
 ::-webkit-scrollbar {
     display: none;
 }
@@ -180,3 +177,4 @@ input,button {
     overflow-y: scroll;
     height: 470px;
 }
+

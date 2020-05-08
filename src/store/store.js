@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
+import {formDate} from '../../static/js/global'
 
 Vue.use(Vuex)
 
@@ -13,15 +14,26 @@ export default new Vuex.Store({
         movieList: [],
         cinemaList: [],
         // 存储缓存的页面
-        includePages: []
-        
+        includePages: [],
+        resId: (new Date()).getTime(),
+        // 判断影院数据是否还有，防止继续加载
+        hasMore: null
     },
     mutations: {
         initMovieList(state, movie) {          
             state.movieList = movie
         },
-        initCinemaList(state,cinema) {  
-            state.cinemaList = cinema  
+        initCinemaList(state,cinema) {              
+            if(cinema.length == 0) {
+                state.cinemaList = []
+            }else{
+                cinema.filter(item => {
+                    state.cinemaList.push(item)
+                }) 
+            }
+        },
+        getHasMore(state, val) {
+            state.hasMore = val
         },
         getTitle(state, val) {
             state.title = val
@@ -37,7 +49,7 @@ export default new Vuex.Store({
         },
         getIncludePages(state, val) {     
             state.includePages = val
-        }         
+        }    
     },
     actions: {
         getMovieList(context) {
@@ -46,7 +58,7 @@ export default new Vuex.Store({
                 context.commit('initMovieList', res.data.coming)
             })      
         },
-        getCinemaList(context,val) {
+        getCinemaList(context,val) {          
             if(typeof val.districtId == 'undefined') {         
                 var districtId = -1
                 var areaId = -1
@@ -75,22 +87,21 @@ export default new Vuex.Store({
                 var serviceId = val.serviceId
             }
 
-            if(typeof val.hallId == 'undefined') {
+            if(typeof val.hallId == 'undefined' || val == null) {
                 var hallId = -1
             }else {
                 var hallId = val.hallId
             }
             // 一开始请求页面时
             if(val == null) {
-                var cityId = '20'
-                var resId = '1588074875593'             
+                var cityId = '20'           
             }else { 
                 var cityId = val.cityid + ''
-                var resId = val.resid + ''  
             }         
-            axios.get(`/ajax/cinemaList?day=2020-04-28&offset=0&limit=20&districtId=${districtId}&lineId=${lineId}&hallType=${hallId}&brandId=${brandId}&serviceId=${serviceId}&areaId=${areaId}&stationId=${stationId}&item=&updateShowDay=true&reqId=${resId}&cityId=${cityId}&optimus_uuid=2E686A407F4411EA8C922F818FF720E83748459079E94ED9850FF08D9BC60368&optimus_risk_level=71&optimus_code=10`)
-            .then(res => {             
+            axios.get(`/ajax/cinemaList?day=${formDate()}&offset=0&limit=20&districtId=${districtId}&lineId=${lineId}&hallType=${hallId}&brandId=${brandId}&serviceId=${serviceId}&areaId=${areaId}&stationId=${stationId}&item=&updateShowDay=true&reqId=${this.state.resId}&cityId=${cityId}&optimus_uuid=2E686A407F4411EA8C922F818FF720E83748459079E94ED9850FF08D9BC60368&optimus_risk_level=71&optimus_code=10`)
+            .then(res => {                                               
                 context.commit('initCinemaList', res.data.cinemas)
+                context.commit('getHasMore', res.data.paging.hasMore)
             })
         } 
     },

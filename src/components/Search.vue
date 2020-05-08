@@ -70,7 +70,10 @@
 </template>
 <script>
 import { mapState } from 'vuex'
-
+import Vue from 'vue'
+Vue.config.errorHandler = function(err, vm, info) {
+  console.log(`Error: ${err.toString()}\nInfo: ${info}`)
+}
 export default {
   name: 'Search',
   data() {

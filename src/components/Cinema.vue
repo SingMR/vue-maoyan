@@ -192,14 +192,14 @@ Vue.config.errorHandler = function(err, vm, info) {
 }
 import { mapState } from 'vuex'
 import { Indicator } from 'mint-ui'
-import { shop_subway, getPinPai, getIcon } from '../../static/js/shop_subway.js'
+import { formDate } from '../../static/js/global'
 export default {
   name: 'Cinema',
   data() {
     return {
-      // cinemaList: [],
-      offset: 20,
-      isLoding: true,
+      // 判断影院数据是否加载完
+      loding: true,
+      offset: 0,
       showCityName: localStorage.getItem('show')
         ? JSON.parse(localStorage.getItem('show')).nm
         : '广州',
@@ -238,6 +238,18 @@ export default {
       this.$store.commit('initCinemaList', [])
     }
     sessionStorage.setItem('showCityName', this.showCityName)
+    // 浏览器刷新事件
+    window.onload  = this.wOnload
+  },
+  activated() {
+    // 缓存组件进来执行
+    window.onscroll = this.moreCinemaList
+    
+  },
+  deactivated() {
+    //缓存组件离开执行
+    window.onscroll = ''
+    
   },
   mounted() {
     if (this.cinemaList.length == 0) {
@@ -255,6 +267,7 @@ export default {
   },
   beforeDestroy() {
     this.timer = null
+    
   },
   watch: {
     activeName(val) {
@@ -281,9 +294,56 @@ export default {
     shopactiveName(val) {}
   },
   computed: {
-    ...mapState(['cinemaList'])
+    ...mapState(['cinemaList','hasMore'])
   },
   methods: {
+    // allDialogClose() {
+    //   alert('close')
+    //   window.onscroll = this.moreCinemaList
+    // },
+    // 浏览器刷新清空sessionStorage,以至于让对话框恢复初始状态
+    wOnload() {
+      sessionStorage.removeItem('hall-default')
+      sessionStorage.removeItem('service-default')
+      sessionStorage.removeItem('brand-default')
+      sessionStorage.removeItem('certainHandle')
+    },
+    moreCinemaList() {
+      let cityid = JSON.parse(localStorage.getItem('show')).id
+      if (
+        document.documentElement.scrollTop + window.screen.height >=
+          this.$refs.articleHeight.offsetHeight &&
+        this.loding && this.hasMore
+      ) {
+        this.loding = false
+        this.offset += 20
+        this.$http
+          .get(
+            `/ajax/cinemaList?day=${formDate()}&offset=${
+              this.offset
+            }&limit=20&districtId=${this.districtId}&lineId=${
+              this.lineId
+            }&hallType=${this.hallId}&brandId=${this.brandId}&serviceId=${
+              this.serviceId
+            }&areaId=${this.areaId}&stationId=${
+              this.stationId
+            }&item=&updateShowDay=true&reqId=${+new Date()}&cityId=${
+              JSON.parse(localStorage.getItem('show')).id
+            }&optimus_uuid=2E686A407F4411EA8C922F818FF720E83748459079E94ED9850FF08D9BC60368&optimus_risk_level=71&optimus_code=10`
+          )
+          .then(res => {
+            // 以免直接加载，用户体验较好
+              setTimeout(_ => {
+                this.$store.commit('initCinemaList', res.data.cinemas)
+              },2000)          
+              this.$store.commit('getHasMore', res.data.paging.hasMore)
+              this.$nextTick(() => {
+                this.loding = true
+              })
+            
+          })
+      }
+    },
     goCinemaDetail(id) {
       this.$router.push('/yingyuan/detail/' + id)
     },
@@ -296,8 +356,7 @@ export default {
     load() {
       if (localStorage.getItem('show') != null) {
         let cityid = JSON.parse(localStorage.getItem('show')).id
-        let resid = JSON.parse(localStorage.getItem('show')).resId
-        this.$store.dispatch('getCinemaList', { cityid, resid })
+        this.$store.dispatch('getCinemaList', { cityid })
       } else {
         this.$store.dispatch('getCinemaList', null)
       }
@@ -337,9 +396,7 @@ export default {
           this.$refs.hallRef[0].className = 'text-ellipsis service-chosen'
           this.$refs.serviceRef[0].className = 'text-ellipsis service-chosen'
         }
-        // if(sessionStorage.getItem('certainHandle') != 'confirm') {
-        //   this.$refs.serviceRef[0].className = 'text-ellipsis service-chosen'
-        // }
+
         if (!sessionStorage.getItem('brand-default')) {
           this.$refs.brandRef[0].children[0].style.visibility = 'visible'
           this.$refs.brandRef[0].style.color = '#dd403b'
@@ -364,7 +421,7 @@ export default {
       this.shop_subwayClickHandle(this.$refs.shopRef, name, shopName)
       // 根据选择的地点进行请求
       let cityid = JSON.parse(localStorage.getItem('show')).id
-      let resid = JSON.parse(localStorage.getItem('show')).resId
+
       // 先保存起来，以至于点击地铁站的时候判断有没有点击过商区
       this.districtId = districtId
       this.areaId = areaId
@@ -376,7 +433,6 @@ export default {
         var timer = setTimeout(() => {
           this.$store.dispatch('getCinemaList', {
             cityid,
-            resid,
             districtId,
             areaId,
             lineId: this.lineId,
@@ -392,7 +448,7 @@ export default {
     subwayClikHandle(name, lineId, stationId, subName) {
       this.shop_subwayClickHandle(this.$refs.subwayRef, name, subName)
       let cityid = JSON.parse(localStorage.getItem('show')).id
-      let resid = JSON.parse(localStorage.getItem('show')).resId
+
       // 先保存起来，以至于点击商区的时候判断有没有点击过地铁站
       this.lineId = lineId
       this.stationId = stationId
@@ -404,7 +460,6 @@ export default {
         var timer = setTimeout(() => {
           this.$store.dispatch('getCinemaList', {
             cityid,
-            resid,
             districtId: this.districtId,
             areaId: this.areaId,
             lineId,
@@ -430,7 +485,6 @@ export default {
         }
       })
       if (name == '全部') {
-        alert(shopName)
         this.cityName = shopName
         this.$refs.qcRef.innerText = shopName
       } else {
@@ -457,7 +511,6 @@ export default {
       this.brandId = brandId
       this.$store.commit('initCinemaList', [])
       let cityid = JSON.parse(localStorage.getItem('show')).id
-      let resid = JSON.parse(localStorage.getItem('show')).resId
       if (brandId) {
         Indicator.open({
           text: '正在加载...',
@@ -466,7 +519,6 @@ export default {
         var timer = setTimeout(() => {
           this.$store.dispatch('getCinemaList', {
             cityid,
-            resid,
             districtId: this.districtId,
             areaId: this.areaId,
             lineId: this.lineId,
@@ -520,8 +572,7 @@ export default {
       sessionStorage.setItem('certainHandle', 'confirm')
       this.$store.commit('initCinemaList', [])
       let cityid = JSON.parse(localStorage.getItem('show')).id
-      let resid = JSON.parse(localStorage.getItem('show')).resId
-      if (this.serviceId || this.hallId ) {
+      if (this.serviceId || this.hallId) {
         Indicator.open({
           text: '正在加载...',
           spinnerType: 'snake'
@@ -529,23 +580,22 @@ export default {
         var timer = setTimeout(() => {
           this.$store.dispatch('getCinemaList', {
             cityid,
-            resid,
             districtId: this.districtId,
             areaId: this.areaId,
             lineId: this.lineId,
             stationId: this.stationId,
-            brandId:this.brandId,
+            brandId: this.brandId,
             serviceId: this.serviceId,
             hallId: this.hallId
           })
           Indicator.close()
         }, 3000)
       }
-      if(this.serviceIndex != 0 || this.hallIndex != 0) {
+      if (this.serviceIndex != 0 || this.hallIndex != 0) {
         this.$refs.tsRef.style.color = '#e54847'
         this.$refs.teSeRef.className = 'icon ts-icon'
-        console.log(this.$refs.tsIconRef.style);       
-      }else {
+        console.log(this.$refs.tsIconRef.style)
+      } else {
         this.$refs.tsRef.style.color = ''
         this.$refs.teSeRef.className = 'icon'
       }
@@ -851,12 +901,12 @@ section {
       background-color: #fff;
       border: 1px solid #e5e5e5;
       text-align: center;
-      border-radius: 5px;      
+      border-radius: 5px;
     }
     .btn {
       color: #fff;
       background: #f03d37;
-    border: 1px solid #f03d37;
+      border: 1px solid #f03d37;
     }
   }
 }

@@ -48,13 +48,12 @@ export default {
           break
       }
       this.$store.commit('getTitle', this.val)
-  
+    
   },
   watch: {
     selected(val, oldVal) {  
       sessionStorage.setItem('selected', val)
-      this.$router.push({ path: '/' + this.selected })
-      
+      this.$router.push({ path: '/' + this.selected })   
       // 此处为tab-item切换时，重新渲染标题
       switch (val) {
         case 'dianying':
@@ -70,8 +69,7 @@ export default {
           val = '我的'
           break
       }
-      this.$store.commit('getTitle', val)
-      
+      this.$store.commit('getTitle', val)     
     }
   },
   methods: {

@@ -85,7 +85,6 @@ export default {
     // this.$store.commit('getTitle', this.cinemaDataList.nm)
   },
   beforeDestroy() {
-    alert(1)
     // bus.$emit('tabShow', true)
     this.$store.commit('changeTabbarStatus', true)
     this.$store.commit('getCinemaTitle', true)

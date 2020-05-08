@@ -70,15 +70,24 @@ export default {
     this.$store.commit('getCinemaTitle', false)
     this.$store.commit('changeTabbarStatus', false)
     //浏览器刷新事件
-    window.addEventListener('beforeunload', _ => {
-      window.scrollTo(0, 0)
-    })
+    // window.addEventListener('unload', _ => {
+    //   // document.documentElement.scrollTop = 0
+    //   window.scrollTo(0,0)
+    // })
+    window.onload = this.wOnload
   },
   beforeDestroy() {
     this.$store.commit('getCinemaTitle', true)
     this.$store.commit('changeTabbarStatus', true)
   },
   methods: {
+    // 浏览器刷新事件，因为刷新是浏览器最后执行的事件，所以给延迟
+    wOnload() {
+      setTimeout(() => {
+        window.scrollTo(0,0)
+      },10)
+      
+    },
     getHotCity() {
       this.$http.get('../../../static/json/city.json').then(res => {
         this.hotCity = res.data.data.slice(0, 11)
@@ -232,7 +241,7 @@ export default {
            this.$store.commit('getIncludePages', ['Cinema','Film'])
         }
         // 用来Cinema页面获取城市数据
-        localStorage.setItem('show', JSON.stringify(val))      
+        localStorage.setItem('show', JSON.stringify(val))  
         this.$router.push('/yingyuan')
       }
     }

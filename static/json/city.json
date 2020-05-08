@@ -3,68 +3,57 @@
         {
             "id": 1,
             "nm": "北京",
-            "py": "beijing",
-            "resId": "1588074855401"
+            "py": "beijing"
         },
         {
             "id": 10,
             "nm": "上海",
-            "py": "shanghai",
-            "resId": "1588074722330"
+            "py": "shanghai"
         },
         {
             "id": 20,
             "nm": "广州",
-            "py": "guangzhou",
-            "resId": "1588074875593"
+            "py": "guangzhou"
         },
         {
             "id": 30,
             "nm": "深圳",
-            "py": "shenzhen",
-            "resId": "1588074829188"
+            "py": "shenzhen"
         },
         {
             "id": 42,
             "nm": "西安",
-            "py": "xian",
-            "resId": "1588074896690"
+            "py": "xian"
         },
         {
             "id": 40,
             "nm": "天津",
-            "py": "tianjin",
-            "resId": "1588074985221"
+            "py": "tianjin"
         },
         {
             "id": 44,
             "nm": "福州",
-            "py": "fuzhou",
-            "resId": "1588075088371"
+            "py": "fuzhou"
         },
         {
             "id": 45,
             "nm": "重庆",
-            "py": "chongqing",
-            "resId": "1588075017279"
+            "py": "chongqing"
         },
         {
             "id": 51,
             "nm": "宁波",
-            "py": "ningbo",
-            "resId": "1588075065595"
+            "py": "ningbo"
         },
         {
             "id": 50,
             "nm": "杭州",
-            "py": "hangzhou",
-            "resId": "1588074917933"
+            "py": "hangzhou"
         },
         {
             "id": 55,
             "nm": "南京",
-            "py": "nanjing",
-            "resId": "1588075144355"
+            "py": "nanjing"
         },
         {
             "id": 52,
