@@ -41,5 +41,5 @@ Vue2.5 + Vuex + mint-ui + axios + Es6 + flex + less + Vue-Router + swiper + git 
 说明
 ===
 在做该项目之前需要掌握一些Html，JS，Css等基础知识以及Vue的运用
-项目仍存在一些bug和不足之处（浏览器进行前进或后退，tabbar没有高亮显示；关于城市，品牌的选择以及一些页面还没有完成），后期完善好，会在进行发布
+项目仍存在一些bug和不足之处（浏览器进行前进或后退，tabbar没有高亮显示），后期完善好，会在进行发布
 如有什么疑问或建议，可以联系我 QQ：962759459 Email：horsefarm@163，谢谢支持^--^
